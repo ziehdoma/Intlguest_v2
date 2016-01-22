@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'studentprofiles#index'
   get '/studentprofile', to: 'studentprofiles#new'
   post '/studentprofile', to: 'studentprofiles#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+=======
+
+
+
+
+
+
+
+
+  devise_for :students
+  
+>>>>>>> master
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
