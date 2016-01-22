@@ -53,5 +53,4 @@ ActiveRecord::Schema.define(version: 20160122202448) do
   add_index "students", ["email"], name: "index_students_on_email", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
 
-
 end
