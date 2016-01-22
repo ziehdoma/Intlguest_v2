@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122201550) do
+ActiveRecord::Schema.define(version: 20160122202448) do
+
+  create_table "studentprofiles", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.text     "bio"
+    t.string   "university"
+    t.integer  "zipcode"
+    t.string   "planguage"
+    t.string   "slanguage"
+    t.boolean  "smoker"
+    t.boolean  "allergies"
+    t.text     "all_desc"
+    t.datetime "startduration"
+    t.datetime "endduration"
+    t.string   "phone"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +52,6 @@ ActiveRecord::Schema.define(version: 20160122201550) do
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+
 
 end
