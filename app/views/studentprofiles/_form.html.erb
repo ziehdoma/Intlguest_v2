@@ -1,0 +1,19 @@
+<%= form_for @studentprofile, url: studentprofile_path(@studentprofile) do |f| %>
+
+	<%= f.label :fname %>
+	<%= f.text_field :fname %></br>
+
+	<%= f.label :university %>
+	<%= f.text_field :university%></br>
+
+	<%= f.label :lname %>
+	<%= f.text_field :lname %></br>
+
+
+	<%= f.label :bio %>
+	<%= f.text_area :bio %></br>
+
+	<%= f.submit :submit %>
+
+<% end %>
+	
