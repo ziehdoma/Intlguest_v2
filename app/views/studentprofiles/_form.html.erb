@@ -1,17 +1,29 @@
 <%= form_for @studentprofile, url: studentprofile_path(@studentprofile) do |f| %>
 
-	<%= f.label :fname %>
+	<%= f.label :First_name %>
 	<%= f.text_field :fname %></br>
+
+	<%= f.label :Last_name %>
+	<%= f.text_field :lname %></br>
 
 	<%= f.label :university %>
 	<%= f.text_field :university%></br>
 
-	<%= f.label :lname %>
-	<%= f.text_field :lname %></br>
+	<%= f.label :Primary_language %>
+	<%= f.text_field :planguage %></br>
 
+	<%= f.label :Other_language %>
+	<%= f.text_field :slanguage %></br>
 
-	<%= f.label :bio %>
-	<%= f.text_area :bio %></br>
+	<%= f.label :smoker %>
+	<%= f.text_field :smoker %></br>
+
+	<%= f.label :Allergies %>
+	<%= f.text_field :allergies%></br>
+
+	<%= f.label :Allergies_description %>
+	<%= f.text_field :all_desc %></br>
+
 
 	<%= f.submit :submit %>
 
