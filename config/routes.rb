@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root 'studentprofiles#index'
   get '/studentprofile', to: 'studentprofiles#new'
-  post '/studentprofile', to: 'studentprofiles#studentprofilepage'
+  post '/studentprofile', to: 'studentprofiles#show'
+
   
   devise_for :students
   
