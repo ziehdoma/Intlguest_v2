@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160125183134) do
+=======
+ActiveRecord::Schema.define(version: 20160122202448) do
+>>>>>>> 658ecd5e1ad63e95059d69ff0864fde30ffb9f78
 
   create_table "studentprofiles", force: :cascade do |t|
     t.string   "fname"
@@ -33,7 +37,10 @@ ActiveRecord::Schema.define(version: 20160125183134) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+<<<<<<< HEAD
     t.integer  "student_id"
+=======
+>>>>>>> 658ecd5e1ad63e95059d69ff0864fde30ffb9f78
   end
 
   create_table "students", force: :cascade do |t|
