@@ -1,0 +1,26 @@
+<%= form_for @studentprofile, url: studentprofile_path, html: { multipart: true } do |f| %>
+	
+	<%= f.text_field :fname, placeholder: "First Name" %></br>
+
+	<%= f.text_field :lname, placeholder: "Last Name" %></br>
+
+	<%= f.text_field :university, placeholder: "University / College"%></br>
+
+	<%= f.text_field :planguage, placeholder: "Primary Language" %></br>
+
+	<%= f.text_field :slanguage, placeholder: "Secondary Language" %></br>
+
+	<%= f.text_field :smoker, placeholder: "Smoker / Non-smoker" %></br>
+
+	<%= f.text_field :allergies, placeholder: "Known Allergies" %></br>
+
+	<%= f.text_field :all_desc, placeholder: "Allergy Description" %></br>
+
+	<%= f.file_field :image, placeholder: "Select your image" %></br>
+
+
+
+	<%= f.submit :submit %>
+
+<% end %>
+	

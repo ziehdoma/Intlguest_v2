@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Intlguest</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	</head>
+	<body>
+	  <header>
+	  	<nav>
+		  	<ul>
+		      <% if flash[:notice] %>
+		        <li class="notice"><%= notice %></li>
+		      <% end %>
+		      <% if flash[:alert] %>
+		        <li class="alert"><%= alert %></li>
+		      <% end %>
+		      <img src="../assets/logo.png" />
+
+		      <li><%= link_to 'Home', root_path %></li>
+
+			    <% if student_signed_in? %>
+			      <li><%= link_to 'Student Log out', destroy_student_session_path,  method: :delete %></li>
+			     <% else %>
+			      <li><%= link_to 'Student Sign up', new_student_registration_path %></li>
+			      <li><%= link_to 'Student Login', student_session_path %></li>
+		     	<% end %>
+		    </ul>
+		    <form>
+			   	<input class="search-box" type="text" placeholder="Search..." required>
+		      <i class="fa fa-search fa-lg"></i>
+				</form>
+	   	</nav>
+  	</header>
+
+
+	<%= yield %>
+
+	</body>
+</html>

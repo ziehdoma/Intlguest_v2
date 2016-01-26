@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lname: MyString
+  bio: MyText
+  university: MyString
+  zipcode: 1
+  planguage: MyString
+  slanguage: MyString
+  smoker: false
+  allergies: false
+  all_desc: MyText
+  startduration: 2016-01-22 15:01:01
+  endduration: 2016-01-22 15:01:01
+  phone: MyString
+
+two:
+  lname: MyString
+  bio: MyText
+  university: MyString
+  zipcode: 1
+  planguage: MyString
+  slanguage: MyString
+  smoker: false
+  allergies: false
+  all_desc: MyText
+  startduration: 2016-01-22 15:01:01
+  endduration: 2016-01-22 15:01:01
+  phone: MyString
