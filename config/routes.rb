@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-
-  root 'studentprofiles#index'
+ 
   get '/studentprofile', to: 'studentprofiles#new'
-  post '/studentprofile', to: 'studentprofiles#show'
-
+  post '/studentprofile', to: 'studentprofiles#create'
+  get 'studentprofile/:id', to: 'studentprofiles#show'
   
   devise_for :students
+
+  root 'studentprofiles#index'
   
 
 
