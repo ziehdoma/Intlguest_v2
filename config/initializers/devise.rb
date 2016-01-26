@@ -6,6 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
+
   # config.secret_key = '7df9e7b62ef986a7ed4f18790909272afc4d02f748f423507257d8b69b463ac5f1e3c67119d4029abebee4b4e630ad879952546b7a050d9d1f2a54c100812fb5'
 
   # ==> Mailer Configuration
@@ -99,6 +100,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
+
   # config.pepper = '70b53c9a47187893fffe3ffcf52d38b5fba41290312fbef4312daf7863ea5105b62d003c9e71ddd09f20bccb6380680cc6f5a2433e0a94452cf748a3d6608d85'
 
   # Send a notification email when the user's password is changed

@@ -1,2 +1,6 @@
-Please update your profile 
-<%= link_to "Profile", studentprofile_path %>
+<% if current_student %>
+	Please update your  
+	<%= link_to " profile", studentprofile_path %>
+<% else %>
+	<% nil %>
+<% end %>

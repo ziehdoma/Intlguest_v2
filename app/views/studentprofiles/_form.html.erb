@@ -1,29 +1,22 @@
-<%= form_for @studentprofile, url: studentprofile_path(@studentprofile) do |f| %>
+<%= form_for @studentprofile, url: studentprofile_path, html: { multipart: true } do |f| %>
+	
+	<%= f.text_field :fname, placeholder: "First Name" %></br>
 
-	<%= f.label :First_name %>
-	<%= f.text_field :fname %></br>
+	<%= f.text_field :lname, placeholder: "Last Name" %></br>
 
-	<%= f.label :Last_name %>
-	<%= f.text_field :lname %></br>
+	<%= f.text_field :university, placeholder: "University / College"%></br>
 
-	<%= f.label :university %>
-	<%= f.text_field :university%></br>
+	<%= f.text_field :planguage, placeholder: "Primary Language" %></br>
 
-	<%= f.label :Primary_language %>
-	<%= f.text_field :planguage %></br>
+	<%= f.text_field :slanguage, placeholder: "Secondary Language" %></br>
 
-	<%= f.label :Other_language %>
-	<%= f.text_field :slanguage %></br>
+	<%= f.text_field :smoker, placeholder: "Smoker / Non-smoker" %></br>
 
-	<%= f.label :smoker %>
-	<%= f.text_field :smoker %></br>
+	<%= f.text_field :allergies, placeholder: "Known Allergies" %></br>
 
-	<%= f.label :Allergies %>
-	<%= f.text_field :allergies%></br>
+	<%= f.text_field :all_desc, placeholder: "Allergy Description" %></br>
 
-	<%= f.label :Allergies_description %>
-	<%= f.text_field :all_desc %></br>
-
+	<%= f.file_field :image, placeholder: "Select your image" %></br>
 
 	<%= f.submit :submit %>
 

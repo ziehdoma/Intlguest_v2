@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
- 
+
   get '/studentprofile', to: 'studentprofiles#new'
   post '/studentprofile', to: 'studentprofiles#create'
-  get 'studentprofile/:id', to: 'studentprofiles#show'
-  
+  get 'studentprofilepage/:id', to: 'studentprofiles#show' 
+
   devise_for :students
 
   root 'studentprofiles#index'
   
-
+  
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
