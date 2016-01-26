@@ -1,6 +1,9 @@
 class StudentprofilesController < ApplicationController
+	before_action :set_studentprofile
+
 	def index
-	end 
+	end
+
 	def new
 		@studentprofile = Studentprofile.new
 	end 
@@ -16,10 +19,13 @@ class StudentprofilesController < ApplicationController
 	end 
 
 	def show
-		@studentprofile = Studentprofile.find(params[:id])
 	end 
 
 	private
+
+	def set_studentprofile
+		@studentprofile = Studentprofile.find(params[:id])
+	end
 
 	def studentprofile_params 
 		params.require(:studentprofile).permit(:fname, :lname, :bio, :university, :zipcode, :planguage, :slanguage, :smoker, :allergies, :all_desc, :startduration, :endduration, :phone, :image).merge(student: current_student)
