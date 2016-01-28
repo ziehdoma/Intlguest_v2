@@ -1,1 +1,12 @@
-<h1><%= @studentprofile.fname %></h1>
+
+<h1> Name: <%= @studentprofile.fname %><%= @studentprofile.lname %></h1>
+
+
+<p> University: <%= @studentprofile.university %></p>
+
+<p> Language: <%= @studentprofile.planguage %></p>
+
+<%= link_to 'Edit', edit_path(@studentprofile) %>
+<%= link_to 'Delete', delete_path(@studentprofile), method: :delete, data:{ deletable: true}, class: "delete-btttn" %>
+
+
