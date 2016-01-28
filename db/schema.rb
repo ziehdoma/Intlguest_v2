@@ -46,8 +46,16 @@ ActiveRecord::Schema.define(version: 20160128200709) do
     t.boolean  "smoking_allowed"
     t.string   "room_type"
     t.string   "duration_value"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "duration"
+    t.string   "num_to_host"
+    t.boolean  "meals"
+    t.integer  "family_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "studentprofiles", force: :cascade do |t|

@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
 
-  devise_for :families
+ 
   get '/studentprofile', to: 'studentprofiles#new'
   post '/studentprofile', to: 'studentprofiles#create'
   get '/studentprofilepage/:id', to: 'studentprofiles#show', as: 'studentprofilepage'
   get '/studentprofilepage/:id/edit', to: 'studentprofiles#edit', as: 'edit'
   delete '/studentprofilepage/:id', to: 'studentprofiles#destroy', as: 'delete', method: :delete
 
+  get '/familyprofile', to: 'familyprofiles#new'
+  post '/familyprofile', to: 'familyprofiles#create'
+  get '/familyprofilepage/:id', to: 'familyprofiles#show', as: 'familyprofilepage'
+  get '/familyprofilepage/:id/edit', to: 'familyprofiles#edit', as: 'editfamily'
+  delete '/familyprofilepage/:id', to: 'familyprofiles#destroy', as: 'deletefamily', method: :delete
+
+
+
   devise_for :students
+  devise_for :families
 
   root 'studentprofiles#index'
   

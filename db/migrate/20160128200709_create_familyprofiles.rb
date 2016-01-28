@@ -15,8 +15,15 @@ class CreateFamilyprofiles < ActiveRecord::Migration
       t.boolean :smoking_allowed
       t.string :room_type
       t.string :duration_value
+      t.string :duration
+      t.string :num_to_host
+      t.boolean :meals
+      t.integer :family_id
+      t.attachment :image
 
       t.timestamps null: false
     end
   end
 end
+
+
