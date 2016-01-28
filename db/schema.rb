@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128192924) do
+ActiveRecord::Schema.define(version: 20160128200709) do
 
   create_table "families", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(version: 20160128192924) do
 
   add_index "families", ["email"], name: "index_families_on_email", unique: true
   add_index "families", ["reset_password_token"], name: "index_families_on_reset_password_token", unique: true
+
+  create_table "familyprofiles", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "town"
+    t.integer  "zipcode"
+    t.string   "state"
+    t.text     "bio"
+    t.boolean  "pets"
+    t.string   "pet_desc"
+    t.boolean  "children"
+    t.string   "phone"
+    t.boolean  "smokers"
+    t.boolean  "smoking_allowed"
+    t.string   "room_type"
+    t.string   "duration_value"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "studentprofiles", force: :cascade do |t|
     t.string   "fname"
