@@ -1,17 +1,20 @@
 class StudentprofilesController < ApplicationController
-	before_action :set_studentprofile
+	
 
 	def index
+
 	end 
 	
 	def new
 		@studentprofile = Studentprofile.new
 	end 
 
+	
 	def create
+		@student = current_student
 		@studentprofile = Studentprofile.new(studentprofile_params)
 		if @studentprofile.save
-			redirect_to root_path, notice: "New profile created"
+			redirect_to studentprofilepage_path(@studentprofile), notice: "New profile created"
 		else
 			flash[:alert] = "There was a problem."
 			render :new
@@ -19,6 +22,28 @@ class StudentprofilesController < ApplicationController
 	end 
 
 	def show
+		if current_student
+			@studentprofile = current_student.studentprofile
+		else 
+			redirect_to root_path, notice: 'you are not logged in.'	
+		end 
+		@studentprofile = set_studentprofile
+	end 
+
+	def update
+		set_studentprofile
+		redirect_to studentprofile_path
+	end 
+
+	def edit
+		set_studentprofile
+		redirect_to studentprofile_path, alert: 'Profile edited'
+	end 
+
+	def destroy
+		set_studentprofile
+		@studentprofile.destroy
+		redirect_to root_path, alert: 'Profile deleted.'
 	end 
 
 	private
