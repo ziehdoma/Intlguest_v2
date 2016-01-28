@@ -27,6 +27,13 @@
 			      <li><%= link_to 'Student Sign up', new_student_registration_path %></li>
 			      <li><%= link_to 'Student Login', student_session_path %></li>
 		     	<% end %>
+
+		     	<% if family_signed_in? %>
+			      <li><%= link_to 'Family Log out', destroy_family_session_path,  method: :delete %></li>
+			     <% else %>
+			      <li><%= link_to 'Family Sign up', new_family_registration_path %></li>
+			      <li><%= link_to 'Family Login', family_session_path %></li>
+		     	<% end %>
 		    </ul>
 		    <form>
 			   	<input class="search-box" type="text" placeholder="Search..." required>

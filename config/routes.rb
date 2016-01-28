@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :families
   get '/studentprofile', to: 'studentprofiles#new'
   post '/studentprofile', to: 'studentprofiles#create'
   get '/studentprofilepage/:id', to: 'studentprofiles#show', as: 'studentprofilepage'
