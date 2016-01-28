@@ -1,0 +1,41 @@
+<%= form_for @familyprofile, url: familyprofile_path, html: { multipart: true } do |f| %>
+	
+	<%= f.text_field :fname, placeholder: "First Name" %></br>
+
+	<%= f.text_field :lname, placeholder: "Last Name" %></br>
+
+	<%= f.text_field :bio, placeholder: "About your family" %></br>
+
+	<%= f.text_field :town, placeholder: "Town"%></br>
+
+	<%= f.text_field :zipcode, placeholder: "Zipcode"%></br>
+
+	<%= f.text_field :state, placeholder: "State" %></br>
+	<%= f.text_field :pets, placeholder: "Pets" %></br>
+
+	<%= f.text_field :pet_desc, placeholder: "Dogs/Cats" %></br>
+
+	<%= f.text_field :children, placeholder: "Children" %></br>
+	<%= f.text_field :phone, placeholder: "Phone" %></br>
+	<%= f.text_field :duration_value, placeholder: "No of days hosting" %></br>
+	<%= f.label :smoker %>
+	<%= f.select :smokers, ['Yes','No'] %></br>
+	<%= f.label :Smoking_Allowed %>
+	<%= f.select :smoking_allowed, ['Yes','No'] %></br>
+
+	<%= f.label :room %>
+	<%= f.select :room_type, ['Shared', 'Private'] %></br>
+	
+    <%= f.select :duration, ['Days','Weeks'] %></br>
+
+    <%= f.label :Meals_provided %>
+	<%= f.select :meals, ['Yes', 'No'] %></br>
+
+	<%= f.file_field :image, placeholder: "Select your image" %></br>
+
+	<%= f.submit :submit %>
+
+	
+
+<% end %>
+	
