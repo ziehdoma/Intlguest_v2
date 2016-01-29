@@ -39,6 +39,7 @@ class FamilyprofilesController < ApplicationController
 	end 
 
 	def destroy
+		set_familyprofile
 		@familyprofile.destroy
 		redirect_to root_path, alert: 'Profile deleted.'
 	end 
