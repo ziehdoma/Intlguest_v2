@@ -6,6 +6,10 @@
 
 	<%= f.text_field :university, placeholder: "University / College"%></br>
 
+	<%= f.text_field :bio, placeholder: "Brief description about yourself" %> </br>
+	
+	<%= f.text_field :phone, placeholder: "Phone" %> </br>
+
 	<%= f.text_field :planguage, placeholder: "Primary Language" %></br>
 
 	<%= f.text_field :slanguage, placeholder: "Secondary Language" %></br>
@@ -16,7 +20,12 @@
 
 	<%= f.text_field :all_desc, placeholder: "Allergy Description" %></br>
 
+	<%= f.date_field :startduration, placeholder: "from" %> </br>
+
+	<%= f.date_field :endduration, placeholder: "to" %> </br>
+
 	<%= f.file_field :image, placeholder: "Select your image" %></br>
+
 
 	<%= f.submit :submit %>
 
