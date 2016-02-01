@@ -10,6 +10,9 @@
 	<body>
 	  <header>
 	  	<nav>
+	  		<!-- <p id="nav-logo"> -->
+	  			<%= link_to image_tag("/assets/icon.png"), root_path, :class =>"nav-logo" %>
+	  		<!-- </p> -->
 		  	<ul>
 		      <% if flash[:notice] %>
 		        <li class="notice"><%= notice %></li>
@@ -17,22 +20,21 @@
 		      <% if flash[:alert] %>
 		        <li class="alert"><%= alert %></li>
 		      <% end %>
-		      <img src="../assets/logo.png" />
-
-		      <li><%= link_to 'Home', root_path %></li>
+		      
+		      <li class="nav-button change-border"><%= link_to 'Home', root_path, :class => "change-border__inner" %></li>
 
 			    <% if student_signed_in? %>
-			      <li><%= link_to 'Student Log out', destroy_student_session_path,  method: :delete %></li>
+			      <li class="nav-button change-border"><%= link_to 'Student Log out', destroy_student_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li><%= link_to 'Student Sign up', new_student_registration_path %></li>
-			      <li><%= link_to 'Student Login', student_session_path %></li>
+			      <li class="nav-button change-border"><%= link_to 'Student Sign up', new_student_registration_path, :class => "change-border__inner" %></li>
+			      <li class="nav-button change-border"><%= link_to 'Student Login', student_session_path, :class => "change-border__inner" %></li>
 		     	<% end %>
 
 		     	<% if family_signed_in? %>
-			      <li><%= link_to 'Family Log out', destroy_family_session_path,  method: :delete %></li>
+			      <li class="nav-button change-border"><%= link_to 'Family Log out', destroy_family_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li><%= link_to 'Family Sign up', new_family_registration_path %></li>
-			      <li><%= link_to 'Family Login', family_session_path %></li>
+			      <li class="nav-button change-border"><%= link_to 'Family Sign up', new_family_registration_path, :class => "change-border__inner" %></li>
+			      <li class="nav-button change-border"class="button change-border"><%= link_to 'Family Login', family_session_path, :class => "change-border__inner" %></li>
 		     	<% end %>
 		    </ul>
 		    <form>

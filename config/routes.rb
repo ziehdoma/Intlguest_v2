@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/familyprofilepage/:id/edit', to: 'familyprofiles#edit', as: 'editfamily'
   delete '/familyprofilepage/:id', to: 'familyprofiles#destroy', as: 'deletefamily', method: :delete
 
-
+  get '/home', to: 'home#index'
 
   devise_for :students
   devise_for :families

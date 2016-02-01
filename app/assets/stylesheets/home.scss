@@ -1,19 +1,20 @@
+@import 'fonts';
+
 
 header {
 	width: 100%;
-	height: 75px;
+	height: 60px;
 	margin: 0;
-	background-color: #adcae6;
-	color: #000;
-	font-family: 'Open Sans', sans-serif;
-	
+	background-color: #f8f8f7;
+	font-family: 'Lato', sans-serif;
+	z-index: 2;
 
 	
 nav {
 	// width: 70%;
-	height: 50px;
+	height: 60px;
 	margin: 0;
-	color: #FFF;
+	color: #564b47;
 	font-weight: 300;
 	form {
 		width: 18%;
@@ -26,52 +27,201 @@ nav {
 			color: gray;
 			display: inline;
 			float: left;
-			border: 1px solid #FFF;
+			border: 1px solid #564b47;
 			border-radius: 5%;
 		}
 
 		  input:focus {
 		  	outline: none;
-		  	border-color: #ffdcd0;
+		  	border-color: #ffa36d;
 		  	border-radius: 5%;
 		  }
 
 		 .fa-search {
-		 	color: #FFF;
+		 	color: #564b47;
 		 	float: left;
 		 	margin: 14px;
 		 	transition-property: color;
-		 	transition-duration: 0.5s;
+		 	transition-duration: 0.2s;
 		 	transition-timing-function: linear;
+		 	
 		 }
 		 .fa-search:hover {
-		 	color: #ffdcd0;
+		 	// color: #ffdcd0;
+		 	color: #ffa36d;
 		 }
 
 	}
 
+	.nav-logo {
+		width: 5%;
+		margin: 0;
+		float: left;
+	
 	img {
-		width: 200px;
-		height: 50px;
-		margin: 10px;
+		width: 55px;
+		height: 55px;
+		margin: 2.5px 10px;
 	  }
-
+ 	}
   ul {
-  	 width: 70%;
-  	float: left;
-  	margin: 0;
+  	 width: 60%;
+  	 height: 25px;
+  	 float: left;
+  	 margin-left: 0;
+  	 padding-top: 5px; // margin-top: 2.5px;
 
   	li {
   		list-style: none;
   		display: inline;
+  		height: 50px;
   		margin: auto 10px;
 
   		 a {
-  		 	color: #FFF;
+  		 	color: #564b47;
   		 	text-decoration: none;
+  		 	letter-spacing: 1px;
   		 }
   
   	 }
    }
   }
 }
+/*===== nav button border == */
+li.nav-button {
+
+  // border: 1px solid #eee;
+  border: none;
+  padding: 5px 20px;
+  position: relative;
+
+}
+
+.change-border::after,
+.change-border::before,
+.change-border__inner::after,
+.change-border__inner::before {
+  background-color: #ffa36d;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+}
+/* setting upper-left*/
+.change-border::after {
+    height: 1px;
+    left: -1px;
+    top: -1px;
+    width: 0px;
+}
+/* setting lower-right*/
+.change-border::before {
+  bottom: -1px;
+  height: 1px;
+  right: -1px;
+  width: 0px;
+}
+/* setting lower-left */
+.change-border__inner::after {
+  bottom: -1px;
+  height: 0px;
+  left: -1px;
+  width: 1px;
+}
+/* setting lower-right */
+.change-border__inner::before {
+  height: 0px;
+  right: -1px;
+  top: -1px;
+  width: 1px;
+}
+
+/* hover */
+.change-border:hover::after,
+.change-border:hover::before {
+  width: 100%;
+  width: calc(100% + 1px);
+}
+.change-border:hover .change-border__inner::after,
+.change-border:hover .change-border__inner::before {
+  height: 100%;
+  height: calc(100% + 1px);
+}
+
+/*=== home/index == */
+
+#home-top {
+	background-image: url("home2.jpg");
+	background-size: cover;
+	// background-opacity: 0.7;
+	width: 100%;
+	height: 80vh;
+	margin:0;
+
+
+	p.welcome-msg-1 {
+		color: #f8f8f7;
+		font-size: 50px;
+		//font-family: 'Lato', sans-serif;
+		font-family: 'Ubuntu', sans-serif;
+		font-weight: 500;
+		position: absolute;
+		top: 40%;
+		right: 225px;
+
+	}
+	p.welcome-msg-2 {
+		@extend .welcome-msg-1;
+		top: 50%;
+		right: 45px;
+
+		span {
+			font-weight: 700;
+			// color: #ffa36d;
+		   // -webkit-text-fill-color: #ffa36d; /* Will override color (regardless of order) */
+   		//    -webkit-text-stroke-width: 0.5px;
+   		//    -webkit-text-stroke-color: #f8f8f7;
+
+		}
+	}
+
+	button.student-sign-up-btn {
+		width: 275px;
+		height: 35px;
+		position: absolute;
+		top: 67%;
+		right: 75px;
+		background-color: #ffa36d;
+		color: #f8f8f7;
+		font-family: 'Lato', sans-serif;
+		border: none;
+		border-radius: 10px;
+		transition-property: background-color;
+		transition-duration: 0.3s;
+		transition-timing-function: linear;
+
+		a {
+			color: #f8f8f7;
+			text-decoration: none;
+			font-size: 20px;
+			font-weight: 700;
+			// font-weight:
+		}
+		&:hover {
+			background-color: #ff833a;
+		}
+	}
+	button.family-sign-up-btn {
+		@extend .student-sign-up-btn;
+		top: 75%;
+	}
+}
+
+#city-list {
+	background-color: #eeeee3;
+	width: 100%;
+	height: 600px;
+}
+
