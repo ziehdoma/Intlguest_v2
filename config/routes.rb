@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete '/familyprofilepage/:id', to: 'familyprofiles#destroy', as: 'deletefamily', method: :delete
 
   get '/home', to: 'home#index'
+  get '/about', to: 'home#about'
 
   devise_for :students
   devise_for :families
