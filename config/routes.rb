@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
  
+  get 'reviews/index'
+
+  get 'reviews/new'
+
+  get 'reviews/edit'
+
+  get 'reviews/show'
+
   get '/studentprofile', to: 'studentprofiles#new'
   post '/studentprofile', to: 'studentprofiles#create'
   get '/studentprofilepage/:id', to: 'studentprofiles#show', as: 'studentprofilepage'
