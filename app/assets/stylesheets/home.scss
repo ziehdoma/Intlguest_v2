@@ -1,26 +1,30 @@
-body { 
-    background: url(../img/profilepic.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
+@import 'fonts';
+$dark-orange: #ff7321;
+$light-orange: #ffa36d;
+$back-color: #f0f0f0;
+$white-color: #f8f8f7;
+$font-color: #564b47;
+
+body{
+	font-family: 'Lato', sans-serif;
+    background-color: $back-color;
+
 }
 
 header {
 	width: 100%;
-	height: 75px;
+	height: 60px;
 	margin: 0;
-	background-color: #adcae6;
-	color: #000;
-	font-family: 'Open Sans', sans-serif;
-	
+	background-color: $white-color;
+	z-index: 2;
 
 	
 nav {
 	// width: 70%;
-	height: 50px;
+	height: 60px;
 	margin: 0;
-	color: #FFF;
+	color: $font-color;
 	font-weight: 300;
 	form {
 		width: 18%;
@@ -33,52 +37,275 @@ nav {
 			color: gray;
 			display: inline;
 			float: left;
-			border: 1px solid #FFF;
+			border: 1px solid $font-color;
 			border-radius: 5%;
 		}
 
 		  input:focus {
 		  	outline: none;
-		  	border-color: #ffdcd0;
+		  	border-color: $light-orange;
 		  	border-radius: 5%;
 		  }
 
 		 .fa-search {
-		 	color: #FFF;
+		 	color: $font-color;
 		 	float: left;
 		 	margin: 14px;
 		 	transition-property: color;
-		 	transition-duration: 0.5s;
+		 	transition-duration: 0.2s;
 		 	transition-timing-function: linear;
+		 	
 		 }
 		 .fa-search:hover {
-		 	color: #ffdcd0;
+		 	// color: #ffdcd0;
+		 	color: $light-orange;
 		 }
 
 	}
 
+	.nav-logo {
+		width: 5%;
+		margin: 0;
+		float: left;
+	
 	img {
-		width: 200px;
-		height: 50px;
-		margin: 10px;
+		width: 55px;
+		height: 55px;
+		margin: 2.5px 10px;
 	  }
-
+ 	}
   ul {
-  	 width: 70%;
-  	float: left;
-  	margin: 0;
+  	 width: 60%;
+  	 height: 25px;
+  	 float: left;
+  	 margin-left: 0;
+  	 padding-top: 5px; // margin-top: 2.5px;
 
   	li {
   		list-style: none;
   		display: inline;
+  		height: 50px;
   		margin: auto 10px;
 
   		 a {
-  		 	color: #FFF;
+  		 	color: $font-color;
   		 	text-decoration: none;
+  		 	letter-spacing: 1px;
   		 }
   
   	 }
    }
   }
 }
+/*===== nav button border == */
+li.nav-button {
+
+  // border: 1px solid #eee;
+  border: none;
+  padding: 5px 20px;
+  position: relative;
+
+}
+
+.change-border::after,
+.change-border::before,
+.change-border__inner::after,
+.change-border__inner::before {
+  background-color: $light-orange;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+}
+/* setting upper-left*/
+.change-border::after {
+    height: 1px;
+    left: -1px;
+    top: -1px;
+    width: 0px;
+}
+/* setting lower-right*/
+.change-border::before {
+  bottom: -1px;
+  height: 1px;
+  right: -1px;
+  width: 0px;
+}
+/* setting lower-left */
+.change-border__inner::after {
+  bottom: -1px;
+  height: 0px;
+  left: -1px;
+  width: 1px;
+}
+/* setting lower-right */
+.change-border__inner::before {
+  height: 0px;
+  right: -1px;
+  top: -1px;
+  width: 1px;
+}
+
+/* hover */
+.change-border:hover::after,
+.change-border:hover::before {
+  width: 100%;
+  width: calc(100% + 1px);
+}
+.change-border:hover .change-border__inner::after,
+.change-border:hover .change-border__inner::before {
+  height: 100%;
+  height: calc(100% + 1px);
+}
+
+/*=== home/index == */
+
+#home-top {
+	background-image: url("home.png");
+	background-size: cover;
+	// background-opacity: 0.7;
+	width: 100%;
+	height: 80vh;
+	margin:0;
+
+
+	p.welcome-msg-1 {
+		color: $white-color;
+		font-size: 50px;
+		//font-family: 'Lato', sans-serif;
+		font-family: 'Ubuntu', sans-serif;
+		font-weight: 700;
+		position: absolute;
+		top: 40%;
+		right: 250px;
+
+	}
+	p.welcome-msg-2 {
+		@extend .welcome-msg-1;
+		top: 50%;
+		right: 30px;
+
+		.fa-home {
+			color: $light-orange;
+		   // -webkit-text-fill-color: $light-orange; /* Will override color (regardless of order) */
+   		//    -webkit-text-stroke-width: 0.5px;
+   		//    -webkit-text-stroke-color: #f8f8f7;
+
+		}
+	}
+
+	button.student-sign-up-btn {
+		width: 275px;
+		height: 35px;
+		position: absolute;
+		top: 67%;
+		right: 75px;
+		background-color: $light-orange;
+		color: $white-color;
+		font-family: 'Lato', sans-serif;
+		border: none;
+		border-radius: 10px;
+		transition-property: background-color;
+		transition-duration: 0.3s;
+		transition-timing-function: linear;
+
+		a {
+			color: $white-color;
+			text-decoration: none;
+			font-size: 20px;
+			font-weight: 700;
+			// font-weight:
+		}
+		&:hover {
+			background-color: #ff833a;
+		}
+	}
+	button.family-sign-up-btn {
+		@extend .student-sign-up-btn;
+		top: 75%;
+	}
+}
+
+#city-list {
+	// background-color: $white;
+	width: 80%;
+	height: 950px;
+	margin: 0 10%;
+
+	p.city-title {
+		width: 100%;
+		color: $font-color;
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 35px;
+		font-weight: 400;
+		// font-style: italic;
+		text-align: center;
+		margin: 0;
+		padding-top: 50px;
+	}
+
+	.grid {
+		margin-top: 30px;
+	}
+		/* clear fix */
+	.grid:after {
+	  content: '';
+	  display: block;
+	  clear: both;
+	}
+	/* ---- .grid-item ---- */
+	.grid-sizer,
+	.grid-item {
+	  width: 33%;	
+	}
+	figure {
+	  position: relative;
+	  overflow: hidden;
+	  width: auto;
+	}
+	  figcaption {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 80%;
+		height: 100%;
+		// background: rgba(255,255,255,.7);
+		-webkit-transition: .3s;
+		transition: .3s;
+		opacity: 0;
+
+		p {
+			color: $white-color;
+			position: relative;
+			top: 45%;
+			font-family: 'Ubuntu', sans-serif;
+			font-size: 2.5em;
+			font-weight: 700;
+		
+		}
+	 }
+	 figure:hover figcaption {
+	 	opacity: 1;
+
+	 }
+  
+	.grid-item {
+	  float: left;
+	  // border: 5px solid #f8f8f7;
+	  // border-radius: 10px;
+	  // margin: 5px;
+	}
+
+	.grid-item img {
+	  display: block;
+	  max-width: 100%;
+	  // border: 5px solid #f8f8f7;
+	  border-radius: 10px;
+	}
+
+
+}
+
