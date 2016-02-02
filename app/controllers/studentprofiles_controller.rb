@@ -25,7 +25,7 @@ class StudentprofilesController < ApplicationController
 		if current_student
 			@studentprofile = current_student.studentprofile
 		else 
-			redirect_to root_path, notice: 'you are not logged in.'	
+			redirect_to root_path, notice: 'Please log in to view this page.'	
 		end 
 		@studentprofile = set_studentprofile
 	end 
