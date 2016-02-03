@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128200709) do
+ActiveRecord::Schema.define(version: 20160202223628) do
 
   create_table "families", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -56,7 +56,19 @@ ActiveRecord::Schema.define(version: 20160128200709) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.boolean  "availability"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "studentprofile_id"
+    t.integer  "familyprofile_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "reviews", ["familyprofile_id"], name: "index_reviews_on_familyprofile_id"
+  add_index "reviews", ["studentprofile_id"], name: "index_reviews_on_studentprofile_id"
 
   create_table "studentprofiles", force: :cascade do |t|
     t.string   "fname"

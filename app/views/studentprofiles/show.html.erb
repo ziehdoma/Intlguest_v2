@@ -1,4 +1,4 @@
-
+<%= image_tag @studentprofile.image.url(:medium) %>
 <h1> Name: <%= @studentprofile.fname %>  <%= @studentprofile.lname %></h1>
 <p> About Yourself: <%= @studentprofile.bio%> </p>
 <p> Phone: <%= @studentprofile.phone %> </p>
@@ -10,9 +10,11 @@
 <p> Allergies: <%= @studentprofile.allergies%></p>
 <p> Type of allergies: <%= @studentprofile.all_desc %></p>
 <p> Need place to stay</P> 
-	<p> From: <%= @studentprofile.startduration %> To: <%= @studentprofile.endduration %> </p>
+<p> From: <%= @studentprofile.startduration %> To: <%= @studentprofile.endduration %> </p>
+
 
 <%= link_to 'Edit', edit_path(@studentprofile) %>
 <%= link_to 'Delete', delete_path(@studentprofile), method: :delete, data:{ deletable: true}, class: "delete-btttn" %>
 
 
+<%= render 'reviews/form' %>
