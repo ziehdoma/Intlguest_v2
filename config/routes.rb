@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
- 
+  get '/stuindex', to: 'studentprofiles#index'
   get '/studentprofile', to: 'studentprofiles#new'
   post '/studentprofile', to: 'studentprofiles#create'
   get '/studentprofilepage/:id', to: 'studentprofiles#show', as: 'studentprofilepage'
   get '/studentprofilepage/:id/edit', to: 'studentprofiles#edit', as: 'edit'
   delete '/studentprofilepage/:id', to: 'studentprofiles#destroy', as: 'delete', method: :delete
 
+  get '/famindex', to: 'familyprofiles#index'
   get '/familyprofile', to: 'familyprofiles#new'
   post '/familyprofile', to: 'familyprofiles#create'
   get '/familyprofilepage/:id', to: 'familyprofiles#show', as: 'familyprofilepage'

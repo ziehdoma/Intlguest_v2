@@ -2,8 +2,13 @@ class StudentprofilesController < ApplicationController
 	
 
 	def index
-
-	end 
+		@studentprofiles = Studentprofile.all.order('created_at DESC')
+		if params[:search]
+			@studentprofiles = Studentprofile.search(params[:search]).order('created_at DESC')
+		else 
+			@studentprofiles = Studentprofile.all.order('created_at DESC')
+		end 
+	end  
 	
 	def new
 		@studentprofile = Studentprofile.new
