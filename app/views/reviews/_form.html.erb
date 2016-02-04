@@ -1,0 +1,4 @@
+<%= form_for @review, url: reviews_new_path, html: { multipart: true} do | f | %>
+	<%= f.text_area :body, placeholder: "Post a note"  %>
+
+<% end %>

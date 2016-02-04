@@ -2,6 +2,12 @@ class FamilyprofilesController < ApplicationController
 	# before_action :set_familyprofile
 
 	def index
+		@familyprofiles = Familyprofile.all.order('created_at DESC')
+		if params[:search]
+			@familyprofiles = Familyprofile.search(params[:search]).order('created_at DESC')
+		else 
+			@familyprofiles = Familyprofile.all.order('created_at DESC')
+		end 
 	end 
 
 	def new

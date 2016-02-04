@@ -5,6 +5,7 @@ class Family < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
          has_one :familyprofile, dependent: :destroy
+         
 end
 
 
