@@ -1,4 +1,4 @@
-module HomeHelper
+module StudentsHelper
 	def resource_name
 		:student
 	end
@@ -8,6 +8,6 @@ module HomeHelper
 	end
 
 	def devise_mapping
-		@devise_mapping ||= Devise.mappings[:student]
+		@devise_mapping ||= Devise.mapping[:student]
 	end
 end
