@@ -193,10 +193,17 @@ li.nav-button {
 	background-color: $white-color;
 	border-radius: 30px;
 	color: $brown-color;
+  
+  .modal-body {
+  	margin-bottom: 20px;
+  }
 
   .modal-title {
    	// color: $dark-orange;
 	}
+   button.close {
+   	outline: none;
+  }
 
    form {
       margin-top: 10px;
