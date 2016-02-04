@@ -28,6 +28,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 gem 'devise'
 
+gem 'bootstrap'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
