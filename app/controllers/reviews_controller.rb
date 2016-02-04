@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
   end 
 
   def edit
@@ -15,5 +14,5 @@ class ReviewsController < ApplicationController
 
   def show
   end
-  
+
 end
