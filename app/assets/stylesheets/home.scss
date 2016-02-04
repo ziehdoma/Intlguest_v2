@@ -1,5 +1,6 @@
 
 @import 'fonts';
+
 $dark-orange: #ff7321;
 $light-orange: #ffa36d;
 $back-color: #f0f0f0;
@@ -232,9 +233,9 @@ li.nav-button {
 
 #city-list {
 	// background-color: $white;
-	width: 80%;
+	width: 70%;
 	height: 950px;
-	margin: 0 10%;
+	margin: 0 20%;
 
 	p.city-title {
 		width: 100%;
@@ -260,7 +261,7 @@ li.nav-button {
 	/* ---- .grid-item ---- */
 	.grid-sizer,
 	.grid-item {
-	  width: 33%;	
+	  width: 25%;	
 	}
 	figure {
 	  position: relative;
@@ -284,9 +285,12 @@ li.nav-button {
 			position: relative;
 			top: 45%;
 			font-family: 'Ubuntu', sans-serif;
-			font-size: 2.5em;
+			font-size: 30px;
 			font-weight: 700;
 		
+			span {
+				color: $light-orange;
+			}
 		}
 	 }
 	 figure:hover figcaption {
@@ -298,7 +302,7 @@ li.nav-button {
 	  float: left;
 	  // border: 5px solid #f8f8f7;
 	  // border-radius: 10px;
-	  // margin: 5px;
+	  margin: 10px;
 	}
 
 	.grid-item img {
