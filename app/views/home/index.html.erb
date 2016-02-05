@@ -8,10 +8,16 @@
   	<%= link_to 'Family Sign up', new_family_registration_path %>
   </button>
 </div>
-<div id="how-to-work">
-</div>
-<div id="city-list">
-	<p class="city-title">Find by cities</p>
+<div id="city-search" class="row">
+ <div class=".col-md-6 .col-md-offset-3">
+    <p class="city-title">Find by cities</p>
+ 	<form id="search-form">
+	  <input class="search-box" type="text" placeholder="Search..." required>
+	  <button class="search-btn"><i class="fa fa-search fa-lg"></i></button>
+	</form>
+  </div><!--.col-md-6-->
+ </div><!--#city-search-->
+ <div id="city-list" class="row">
 	  <div class="grid">
 	  <div class="grid-sizer"></div>
 	  <div class="grid-item">
@@ -101,4 +107,5 @@
 	    <img src="../assets/fl.png" />
 	  </div> -->
 	</div>
+ </div><!--#city-list-->
 </div>

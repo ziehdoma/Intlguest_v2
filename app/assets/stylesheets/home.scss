@@ -4,13 +4,14 @@ $light-orange: #ffa36d;
 $back-color: #f0f0f0;
 $white-color: #f8f8f7;
 $font-color: #564b47;
+$brown-color: #6d6262;
+$gray-color: #c4c4c4;
 
 /*=== home/index == */
 
 #home-top {
 	background-image: url("home.png");
 	background-size: cover;
-	// background-opacity: 0.7;
 	width: 100%;
 	height: 80vh;
 	margin:0;
@@ -18,9 +19,7 @@ $font-color: #564b47;
 
 	p.welcome-msg-1 {
 		color: #FFF;
-		// color: $white-color;
 		font-size: 50px;
-		//font-family: 'Lato', sans-serif;
 		font-family: 'Ubuntu', sans-serif;
 		font-weight: 700;
 		position: absolute;
@@ -75,23 +74,73 @@ $font-color: #564b47;
 	}
 }
 
+#city-search {
+  p.city-title {
+	// width: 100%;
+	color: $brown-color;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: 2px;
+	margin: 0;
+	padding-top: 30px;
+  }
+	form {
+	  width: 40%;
+      height: 50px;
+      margin-top: 10px;
+	  margin-left: 30%;
+	  border-radius: 25px;
+      
+	input {
+	  width: 80%;
+      height: 50px;
+	  padding: 10px 5px;
+	  color: $gray-color;
+	  border: none;
+	  background-color: transparent;
+	  float: left;
+	  border-width: 3px;
+	  border-style: solid;
+	  border-color: $gray-color;
+	  border-right-color: transparent;
+	  border-radius: 25px 0 0 25px;
+	}
+	  input:focus {
+	  	outline: none;
+	  	background-color: rgba(255,255,255, 0.3);
+	  	color: $brown-color;
+	  }
+
+	  .search-btn {
+    	position: relative;
+    	float: right;
+    	border: 3px solid $light-orange;
+    	border-radius: 0 25px 25px 0;
+    	padding: 0;
+    	cursor: pointer;
+    	height: 50px;
+    	width: 20%;
+    	background-color: $light-orange;
+    	color: $white-color;
+    	transition-property: color background-color border-color;
+    	transition-duration: 0.2s;
+    	transition-timing-function: linear;
+
+	     &:hover {
+	       background-color: $dark-orange;
+	       border-color: $dark-orange;
+	       color: $white-color;
+	      }
+	    }
+     }
+}
 #city-list {
 	// background-color: $white;
 	width: 70%;
 	height: 950px;
 	margin: 0 20%;
-
-	p.city-title {
-		width: 100%;
-		color: $font-color;
-		font-family: 'Ubuntu', sans-serif;
-		font-size: 35px;
-		font-weight: 400;
-		// font-style: italic;
-		text-align: center;
-		margin: 0;
-		padding-top: 50px;
-	}
 
 	.grid {
 		margin-top: 30px;
@@ -112,28 +161,27 @@ $font-color: #564b47;
 	  overflow: hidden;
 	  width: auto;
 	}
-	  figcaption {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 2;
-		width: 80%;
-		height: 100%;
-		// background: rgba(255,255,255,.7);
-		-webkit-transition: .3s;
-		transition: .3s;
-		opacity: 0;
+	figcaption {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 2;
+	  width: 80%;
+	  height: 100%;
+	  -webkit-transition: .3s;
+	  transition: .3s;
+	  opacity: 0;
 
-		p {
-			color: $white-color;
-			position: relative;
-			top: 45%;
-			font-family: 'Ubuntu', sans-serif;
-			font-size: 30px;
-			font-weight: 700;
+      p {
+		color: $white-color;
+		position: relative;
+		top: 45%;
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
 		
-			span {
-				color: $light-orange;
+	    span {
+		  color: $light-orange;
 			}
 		}
 	 }
@@ -144,18 +192,13 @@ $font-color: #564b47;
   
 	.grid-item {
 	  float: left;
-	  // border: 5px solid #f8f8f7;
-	  // border-radius: 10px;
 	  margin: 10px;
 	}
 
 	.grid-item img {
 	  display: block;
 	  max-width: 100%;
-	  // border: 5px solid #f8f8f7;
 	  border-radius: 10px;
 	}
-
-
 }
 
