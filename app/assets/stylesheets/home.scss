@@ -1,6 +1,8 @@
 @import 'fonts';
-$dark-orange: #ff7321;
-$light-orange: #ffa36d;
+$dark-orange: #ff8b6f;
+// $light-orange: #ffa36d;
+// $light-orange: #ffa583;
+$light-orange: #ff9b83;
 $back-color: #f0f0f0;
 $white-color: #f8f8f7;
 $font-color: #564b47;
@@ -26,12 +28,13 @@ $gray-color: #c4c4c4;
 		font-weight: 700;
 		position: absolute;
 		top: 40%;
-		// right: 170px;
+		right: 120px;
 
 	}
 	p.welcome-msg-2 {
 		@extend .welcome-msg-1;
 		top: 50%;
+		right: 10px;
 		// right: 30px;
 
 		.fa-home {
@@ -65,7 +68,7 @@ $gray-color: #c4c4c4;
 		padding: 3px;
 		
 		&:hover {
-			background-color: #ff833a;
+			background-color: $dark-orange;
 			color: #FFF;
 			border: none;
 		}

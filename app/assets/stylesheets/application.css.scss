@@ -19,8 +19,10 @@
 	Fonts and colors
  ---------------------------------------*/
 @import 'fonts';
-$dark-orange: #ff7321;
-$light-orange: #ffa36d;
+$dark-orange: #ff8b6f;
+// $light-orange: #ffa36d;
+// $light-orange: #ffa583;
+$light-orange: #ff9b83;
 $back-color: #f0f0f0;
 $white-color: #f8f8f7;
 $font-color: #564b47;
@@ -191,7 +193,7 @@ nav {
       margin-bottom: 10px;
 	}
    .email input:focus, .pw input:focus, .pwc input:focus {
-   	outline: 2px solid $light-orange;
+   	outline: 1px solid $light-orange;
     }
 
    .field {

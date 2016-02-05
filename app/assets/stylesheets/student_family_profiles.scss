@@ -1,9 +1,31 @@
 // Place all the styles related to the studentprofiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+/*--------------------------------------
+	Fonts and colors
+ ---------------------------------------*/
+@import 'fonts';
+$dark-orange: #ff8b6f;
+// $light-orange: #ffa36d;
+// $light-orange: #ffa583;
+$light-orange: #ff9b83;
+$back-color: #f0f0f0;
+$white-color: #f8f8f7;
+$font-color: #564b47;
+$brown-color: #6d6262;
+$gray-color: #c4c4c4;
+
+
 #new_familyprofile {
 
 	input {
-
+		width: 80%;
+		margin:  10px 10%;
+		border: none;
+		color: $brown-color;
+	}
+    input:focus {
+		outline: 1px solid $light-orange;
 	}
 }
