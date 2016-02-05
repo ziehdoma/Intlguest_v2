@@ -42,97 +42,122 @@
 		     	<% if family_signed_in? %>
 			      <li class="nav-button change-border"><%= link_to 'Family Log out', destroy_family_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li class="nav-button change-border" data-toggle="modal" data-target="#familySignUpModal"><span class="change-border__inner"><i class="fa fa-users"></i> Family Sign up</span></li>
-			      <li class="nav-button change-border" data-toggle="modal" data-target="#familyLogInModal"class="button change-border"><span class="change-border__inner"><i class="fa fa-users"></i> Family Log in</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#familySignUpModal"><span class="change-border__inner"><i class="fa fa-users"></i> Host Sign up</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#familyLogInModal"class="button change-border"><span class="change-border__inner"><i class="fa fa-users"></i> Host Log in</span></li>
 		     	<% end %>
-		     	<li class="nav-button change-border"><i class="fa fa-cog"></i> Settings</li>
-			      </ul>
+		     	<% if student_signed_in? || family_signed_in? %>
+		     	 <li class="nav-button change-border"><i class="fa fa-cog"></i> Settings</li>
+		     	<% end %>
+			   </ul>
 			 </div>
 		    </ul>
 	   	</nav>
   	</header>
 
 
-<!-- MODAL -->
- <div class="modal fade" id="studentSignUpModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Student Sign Up</h4>
-        </div>
-        <div class="modal-body">
-         <p><%= render 'students/registrations/new' %></p>
-        </div>
-   <!--      <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div> -->
-      </div>
-      
-    </div>
-  </div>
+	<!-- MODAL -->
+	 <div class="modal fade" id="studentSignUpModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Student Sign Up</h4>
+	        </div>
+	        <div class="modal-body">
+	         <p><%= render 'students/registrations/new' %></p>
+	        </div>
+	   <!--      <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
 
-  <div class="modal fade" id="studentLogInModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Student Log In</h4>
-        </div>
-        <div class="modal-body">
-         <%= render 'students/sessions/new' %>
-        </div>
-    <!--     <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div> -->
-      </div>
-      
-    </div>
-  </div>
+	  <div class="modal fade" id="studentLogInModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Student Log In</h4>
+	        </div>
+	        <div class="modal-body">
+	         <%= render 'students/sessions/new' %>
+	        </div>
+	    <!--     <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
 
-  <div class="modal fade" id="familySignUpModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Family Sign up</h4>
-        </div>
-        <div class="modal-body">
-         <%= render 'families/registrations/new' %>
-        </div>
-    <!--     <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div> -->
-      </div>
-      
-    </div>
-  </div>
+	  <div class="modal fade" id="familySignUpModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title"> Host Family Sign up</h4>
+	        </div>
+	        <div class="modal-body">
+	         <%= render 'families/registrations/new' %>
+	        </div>
+	    <!--     <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
 
-  <div class="modal fade" id="familyLogInModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Family Login</h4>
-        </div>
-        <div class="modal-body">
-         <%= render 'families/sessions/new' %>
-        </div>
-     <!--    <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div> -->
-      </div>
-      
-    </div>
-  </div>
+	  <div class="modal fade" id="familyLogInModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Host Family Login</h4>
+	        </div>
+	        <div class="modal-body">
+	         <%= render 'families/sessions/new' %>
+	        </div>
+	     <!--    <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
 
 	<%= yield %>
 
+     <footer>
+       <div class="ft-container row">
+         <div class="col-sm-4 col-md-4 ft-left">
+  		   <ul>
+  		   	<li>About</li>
+  		   	<li>Team</li>
+  		   	<li>Policy & Term</li>
+  		   	<li>Payment method</li>
+  		   	<li>Contact</li>
+  		   </ul>
+         </div>
+         <div class="col-sm-4 col-md-4 ft-middle">
+  		  <!--  <p>HELLO I am Middle</p> -->
+         </div>
+         <div class="col-sm-4 col-md-4 ft-right">
+  		   <ul>
+  		   	<li class="sns-icon"><i class="fa fa-facebook"></i></li>
+  		   	<li class="sns-icon"><i class="fa fa-twitter"></i></li>
+  		   	<li class="sns-icon"><i class="fa fa-instagram"></i></li>
+  		   </ul>
+         </div>
+       </div>
 
+     </footer>
 
-	</body>
+  </body>
 </html>

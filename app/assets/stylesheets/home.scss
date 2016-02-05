@@ -16,21 +16,23 @@ $gray-color: #c4c4c4;
 	height: 80vh;
 	margin:0;
 
-
+  .welcome-msg-box {
+  	height: 600px;
 	p.welcome-msg-1 {
+		// width: 70%;
 		color: #FFF;
 		font-size: 50px;
 		font-family: 'Ubuntu', sans-serif;
 		font-weight: 700;
 		position: absolute;
 		top: 40%;
-		right: 170px;
+		// right: 170px;
 
 	}
 	p.welcome-msg-2 {
 		@extend .welcome-msg-1;
 		top: 50%;
-		right: 30px;
+		// right: 30px;
 
 		.fa-home {
 			color: $light-orange;
@@ -40,6 +42,7 @@ $gray-color: #c4c4c4;
 
 		}
 	}
+ }
 
 	.student-sign-up-btn {
 		width: 275px;
@@ -87,10 +90,10 @@ $gray-color: #c4c4c4;
 	padding-top: 30px;
   }
 	form {
-	  width: 40%;
+	  width: 80%;
       height: 50px;
       margin-top: 10px;
-	  margin-left: 30%;
+	  margin-left: 10%;
 	  border-radius: 25px;
       
 	input {
@@ -136,11 +139,12 @@ $gray-color: #c4c4c4;
 	    }
      }
 }
+// ======== City list ====== //
 #city-list {
 	// background-color: $white;
 	width: 70%;
 	height: 950px;
-	margin: 0 20%;
+	margin: 0 20% 50px 20%;
 
 	.grid {
 		margin-top: 30px;
@@ -187,6 +191,7 @@ $gray-color: #c4c4c4;
 	 }
 	 figure:hover figcaption {
 	 	opacity: 1;
+	 	cursor: pointer;
 
 	 }
   
