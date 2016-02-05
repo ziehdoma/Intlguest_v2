@@ -31,6 +31,7 @@ body{
 	// font-family: 'Alegreya Sans', sans-serif;
     font-family: 'Ubuntu', sans-serif;
     background-color: $back-color;
+    margin: 0;
 
 }
 
@@ -43,7 +44,7 @@ header {
 
 	
 nav {
-	// width: 70%;
+	width: 95%;
 	height: 45px;
 	margin: 0;
 	color: $font-color;
@@ -61,89 +62,100 @@ nav {
 	  }
  	}
   ul {
-  	 width: 60%;
-  	 height: 25px;
-  	 float: left;
-  	 margin-left: 0;
-  	 padding-top: 5px; // margin-top: 2.5px;
+  	 // width: 100px;
+  	 // height: 25px;
+  	 float: right;
+  	 // margin-left: 0;
+  	 // padding-top: 5px; // margin-top: 2.5px;
+    button.dropdown-toggle {
+    	width: 120px;
+    	font-size: 15px;
+    	letter-spacing: 2px;
+    	padding: 5px;
+    	background: transparent;
+    	color: $light-orange;
+    	border: none;
+    	// border: 2px solid $light-orange;
+    	border-radius: 7px;
 
-  	li {
-  		list-style: none;
-  		display: inline;
-  		height: 45px;
-  		margin: auto 10px;
-
-  		 a {
-  		 	color: $font-color;
-  		 	text-decoration: none;
-  		 	letter-spacing: 1px;
-  		 }
+     &:hover {
+     	color: $dark-orange;
+     }
+    }
+  	  li {
+  		 list-style: none;
+  		 height: 25px;
+  		 margin: auto 10px;
+  		 color: $font-color;
+  		 text-decoration: none;
+  		 letter-spacing: 2px;
+  		 font-size: 12px;
   	  }
     }
   }
 }
 /*===== nav button border == */
-li.nav-button {
+// li.nav-button {
 
-  // border: 1px solid #eee;
-  border: none;
-  padding: 5px 20px;
-  position: relative;
+//   // border: 1px solid #eee;
+//   border: none;
+//   padding: 5px 20px;
+//   position: relative;
 
-}
+// }
 
-.change-border::after,
-.change-border::before,
-.change-border__inner::after,
-.change-border__inner::before {
-  background-color: $light-orange;
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 10;
-  transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-}
-/* setting upper-left*/
-.change-border::after {
-    height: 1px;
-    left: -1px;
-    top: -1px;
-    width: 0px;
-}
-/* setting lower-right*/
-.change-border::before {
-  bottom: -1px;
-  height: 1px;
-  right: -1px;
-  width: 0px;
-}
-/* setting lower-left */
-.change-border__inner::after {
-  bottom: -1px;
-  height: 0px;
-  left: -1px;
-  width: 1px;
-}
-/* setting lower-right */
-.change-border__inner::before {
-  height: 0px;
-  right: -1px;
-  top: -1px;
-  width: 1px;
-}
+// .change-border::after,
+// .change-border::before,
+// .change-border__inner::after,
+// .change-border__inner::before {
+//   background-color: $light-orange;
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   z-index: 10;
+//   transition: all .3s ease;
+//   -webkit-transition: all .3s ease;
+// }
+// /* setting upper-left*/
+// .change-border::after {
+//     height: 1px;
+//     left: -1px;
+//     top: -1px;
+//     width: 0px;
+// }
+// /* setting lower-right*/
+// .change-border::before {
+//   bottom: -1px;
+//   height: 1px;
+//   right: -1px;
+//   width: 0px;
+// }
+// /* setting lower-left */
+// .change-border__inner::after {
+//   bottom: -1px;
+//   height: 0px;
+//   left: -1px;
+//   width: 1px;
+// }
+// /* setting lower-right */
+// .change-border__inner::before {
+//   height: 0px;
+//   right: -1px;
+//   top: -1px;
+//   width: 1px;
+// }
 
-/* hover */
-.change-border:hover::after,
-.change-border:hover::before {
-  width: 100%;
-  width: calc(100% + 1px);
-}
-.change-border:hover .change-border__inner::after,
-.change-border:hover .change-border__inner::before {
-  height: 100%;
-  height: calc(100% + 1px);
-}
+// /* hover */
+// .change-border:hover::after,
+// .change-border:hover::before {
+//   width: 100%;
+//   width: calc(100% + 1px);
+// }
+// .change-border:hover .change-border__inner::after,
+// .change-border:hover .change-border__inner::before {
+//   height: 100%;
+//   height: calc(100% + 1px);
+// }
 
 
 

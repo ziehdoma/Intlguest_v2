@@ -41,7 +41,7 @@ $gray-color: #c4c4c4;
 		}
 	}
 
-	button.student-sign-up-btn {
+	.student-sign-up-btn {
 		width: 275px;
 		height: 35px;
 		position: absolute;
@@ -52,23 +52,23 @@ $gray-color: #c4c4c4;
 		font-family: 'Lato', sans-serif;
 		border: none;
 		border-radius: 10px;
-		transition-property: background-color;
+		transition-property: background-color color;
 		transition-duration: 0.3s;
 		transition-timing-function: linear;
-
-		a {
-			color: $white-color;
-			text-decoration: none;
-			font-size: 20px;
-			font-weight: 700;
-			// font-weight:
-		}
+		color: $white-color;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+		padding: 3px;
+		
 		&:hover {
 			background-color: #ff833a;
 			color: #FFF;
+			border: none;
 		}
 	}
-	button.family-sign-up-btn {
+
+	.family-sign-up-btn {
 		@extend .student-sign-up-btn;
 		top: 75%;
 	}

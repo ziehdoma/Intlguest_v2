@@ -1,12 +1,8 @@
 <div id="home-top">
   <p class="welcome-msg-1">Meet your</p>
   <p class="welcome-msg-2">New Family<i class="fa fa-home fa-1x"></i></p>
-  <button class="student-sign-up-btn">
-  	<%= link_to 'Student Sign up', new_student_registration_path %>
-  </button>
-  <button class="family-sign-up-btn">
-  	<%= link_to 'Family Sign up', new_family_registration_path %>
-  </button>
+  <p type="button" class="student-sign-up-btn" data-toggle="modal" data-target="#studentSignUpModal">Student Sign up</p>
+  <p  type="button" class="family-sign-up-btn" data-toggle="modal" data-target="#familySignUpModal">Family Sign Up</p>
 </div>
 <div id="city-search" class="row">
  <div class=".col-md-6 .col-md-offset-3">
