@@ -12,20 +12,70 @@ $dark-orange: #ff8b6f;
 $light-orange: #ff9b83;
 $back-color: #f0f0f0;
 $white-color: #f8f8f7;
+$off-white-color: #fcfcfc;
 $font-color: #564b47;
 $brown-color: #6d6262;
 $gray-color: #c4c4c4;
+$light-gray-color: #a5abad;
 
-
-#new_familyprofile {
+ .profile-container {
+ 	margin: 20px auto;
+ }
+#new_familyprofile, #new_studentprofile {
+	color: $brown-color;
 
 	input {
-		width: 80%;
-		margin:  10px 10%;
+		width: 50%;
+		height: 25px;
+		margin:  5px 25%;
+		padding: 3px 10px;
 		border: none;
 		color: $brown-color;
+		background-color: #FFF;
+		// float: left;
 	}
     input:focus {
 		outline: 1px solid $light-orange;
+		
+	}
+	.profile-select-box {
+		@extend input;
+
+	}
+	label {
+		color: $light-gray-color;
+		font-weight: 400;
+		margin: 0;
+	}
+	select {
+		background-color: #FFF;
+		border: none;
+		outline: none;
+		float: right;
+	}
+	.profile-submit-btn {
+		background-color: $light-orange;
+		color: $off-white-color;
+
+	  &:hover {
+		  background-color: $dark-orange;
+		  color: #FFF;
+	  }
 	}
 }
+
+//  #familyprofile_image, #studentprofile_image {
+// 	input[type='file'] {
+// 		border: 2px solid blue;
+// 		background-color: red;
+// 	}
+// }
+
+
+
+
+
+
+
+
+
