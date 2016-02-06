@@ -16,10 +16,17 @@ $off-white-color: #fcfcfc;
 $font-color: #564b47;
 $brown-color: #6d6262;
 $gray-color: #c4c4c4;
-$light-gray-color: #a5abad;
+$light-gray-color: #acacac;
 
- .profile-container {
+//=== Family profile & student profile form ==/
+.profile-container {
  	margin: 20px auto;
+
+ 	p {
+ 		color: $dark-orange;
+ 		text-align: center;
+ 		letter-spacing: 1px;
+ 	}
  }
 #new_familyprofile, #new_studentprofile {
 	color: $brown-color;
@@ -32,27 +39,56 @@ $light-gray-color: #a5abad;
 		border: none;
 		color: $brown-color;
 		background-color: #FFF;
+		border-radius: 5px;
 		// float: left;
 	}
     input:focus {
-		outline: 1px solid $light-orange;
+		outline: 2px solid $light-orange;
 		
 	}
 	.profile-select-box {
 		@extend input;
+		  margin: 9px 25%;
+		  padding: 0 10px;
+	// for caladner box  //
+		input {
+		  width: 80%;
+		  color: $light-gray-color;
+		  font-weight: 400;
+		  margin: 0;
+		  padding: 0;
+		  float: right;
+		  // border-radius: 10px;
+
+		  &:focus {
+		  	color: $brown-color;
+		  	outline: none;	
+		  }
+		}
+	// for caladner box label //
+		label.date-label {
+			width: 20%;
+			height: 25px;
+			margin: 0;
+			padding: 0;
+			float: left;
+		}
 
 	}
+	// for select box label //
 	label {
 		color: $light-gray-color;
 		font-weight: 400;
 		margin: 0;
 	}
+	// for Select box //
 	select {
 		background-color: #FFF;
 		border: none;
 		outline: none;
 		float: right;
 	}
+
 	.profile-submit-btn {
 		background-color: $light-orange;
 		color: $off-white-color;
@@ -62,14 +98,17 @@ $light-gray-color: #a5abad;
 		  color: #FFF;
 	  }
 	}
+	input.filestyle {
+		background-color: none;
+		border: none;
+		outline: none;
+
+	}
 }
 
-//  #familyprofile_image, #studentprofile_image {
-// 	input[type='file'] {
-// 		border: 2px solid blue;
-// 		background-color: red;
-// 	}
-// }
+//=== family & student profile show page ==//
+
+
 
 
 

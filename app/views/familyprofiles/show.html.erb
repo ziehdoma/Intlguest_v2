@@ -1,21 +1,26 @@
-<h1> Name: <%= @familyprofile.fname %>  <%= @familyprofile.lname %></h1>
-<p> About Your Family: <%= @familyprofile.bio%> </p>
-<p> Phone: <%= @familyprofile.phone %> </p>
-<p> Town: <%= @familyprofile.town %></p>
-<p> Zipcode: <%= @familyprofile.zipcode %></p>
-<p> State: <%= @familyprofile.state %></p>
-<p> Pets: <%= @familyprofile.pets %> <%= @familyprofile.pet_desc %></p>
-<p> Children: <%= @familyprofile.children%></p>
-<p> Hosting duration: <%= @familyprofile.duration_value %> <%= @familyprofile.duration %></p>
-<p> Smoker: <%= @familyprofile.smokers %></p>
-<p> Smoking allowed: <%= @familyprofile.smoking_allowed%></p>
-<p> Room available: <%= @familyprofile.room_type %></p>
-<p> Meals provided: <%= @familyprofile.meals %></p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-2">
+	<p> Name: <%= @familyprofile.fname %>  <%= @familyprofile.lname %></h1>
+	<p> About Your Family: <%= @familyprofile.bio%> </p>
+	<p> Phone: <%= @familyprofile.phone %> </p>
+	<p> Town: <%= @familyprofile.town %></p>
+	<p> Zipcode: <%= @familyprofile.zipcode %></p>
+	<p> State: <%= @familyprofile.state %></p>
+	<p> Pets: <%= @familyprofile.pets %> <%= @familyprofile.pet_desc %></p>
+	<p> Children: <%= @familyprofile.children%></p>
+	<p> Hosting duration: <%= @familyprofile.duration_value %> <%= @familyprofile.duration %></p>
+	<p> Smoker: <%= @familyprofile.smokers %></p>
+	<p> Smoking allowed: <%= @familyprofile.smoking_allowed%></p>
+	<p> Room available: <%= @familyprofile.room_type %></p>
+	<p> Meals provided: <%= @familyprofile.meals %></p>
+  </div>
+  <div class="col-md-4 col-md-offset-4">
+  	<%= image_tag @familyprofile.image.url(:medium) %>
+  </div>
+	<%= link_to 'Edit', edit_path(@familyprofile) %>
+	<%= link_to 'Delete', delete_path(@familyprofile), method: :delete, data:{ deletable: true}, class: "delete-btttn" %>
 
-<%= link_to 'Edit', edit_path(@familyprofile) %>
-<%= link_to 'Delete', delete_path(@familyprofile), method: :delete, data:{ deletable: true}, class: "delete-btttn" %>
-
-	
+</div>	
 
 
 

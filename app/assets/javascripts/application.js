@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
+
 // == init Masonry after all images have loaded ==//
 var $grid = $('.grid').imagesLoaded( function() {
   $grid.masonry({
@@ -24,6 +25,11 @@ var $grid = $('.grid').imagesLoaded( function() {
 });
 
 
+// === boostrap-file style ===//
+$(":file").filestyle({size: "sm"});
+
+// $(":file").filestyle({icon: false});
+// $(":file").filestyle({placeholder: "No file"});
 //=== waypoints ===//
 // $(document).ready(function() {
 // //nav bar will be fixed on top after scrolling down below 110px from the top of webpage//
