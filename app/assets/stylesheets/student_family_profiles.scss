@@ -19,7 +19,7 @@ $gray-color: #c4c4c4;
 $light-gray-color: #acacac;
 
 //=== Family profile & student profile form ==/
-.profile-container {
+#profile-form-container {
  	margin: 20px auto;
 
  	p {
@@ -107,8 +107,42 @@ $light-gray-color: #acacac;
 }
 
 //=== family & student profile show page ==//
+#profile-container {
+	margin: 30px 0;
+	color: $brown-color;
+	// border: 2px solid $light-orange;
 
+	.profile-image {
+		border-bottom: 1.5px solid $gray-color;
+		margin: 20px 25%;
+		// margin: 10px 0;
+		
+		.img-circle {
+			border: 2px solid #FFF;
+			margin: 10px;
+			display: inline-block;
+		}
+	    p.profile-name {
+	    	@extend .img-circle;
+	    	border: none;
+	    	font-size: 18px;
+	    	letter-spacing: 1px;
+	    }
+	}
+	.profile-info {
+	  @extend .profile-image;
 
+	    p {
+		  font-weight: 300;
+		}
+		// background-color: #FFF;
+	}
+	span {
+		color: $dark-orange;
+		font-weight: 400;
+		padding: 0 8px;
+	}
+}
 
 
 

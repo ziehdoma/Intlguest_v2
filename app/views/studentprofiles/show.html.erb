@@ -1,6 +1,6 @@
 <div class="col-md-4 col-md-offset-4">
 	<%= image_tag @studentprofile.image.url(:medium) %>
-	<h1> Name: <%= @studentprofile.fname %>  <%= @studentprofile.lname %></h1>
+	<p> Name: <%= @studentprofile.fname %>  <%= @studentprofile.lname %></p>
 	<p> About Yourself: <%= @studentprofile.bio%> </p>
 	<p> Phone: <%= @studentprofile.phone %> </p>
 	<p> University: <%= @studentprofile.university %></p>
@@ -14,7 +14,7 @@
 	<p> From: <%= @studentprofile.startduration %> To: <%= @studentprofile.endduration %> </p>
 </div>
 <div class="col-md-4 col-md-offset-4">
-  	<%= image_tag @studentprofile.image.url(:medium) %>
+  	<%= image_tag @studentprofile.image.url(:medium), :class => 'profile-image' %>
  </div>
 
 <%= link_to 'Edit', edit_path(@studentprofile) %>
