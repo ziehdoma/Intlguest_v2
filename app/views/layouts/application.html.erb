@@ -38,18 +38,18 @@
 			        <% if student_signed_in? %>
 			      <li class="nav-button change-border" ><%= link_to 'Student Log out', destroy_student_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li class="nav-button change-border" data-toggle="modal" data-target="#studentSignUpModal"><span class="change-border__inner"><i class="fa fa-graduation-cap"></i> Student Sign Up</span></li>
-			      <li class="nav-button change-border" data-toggle="modal" data-target="#studentLogInModal"><span class="change-border__inner"><i class="fa fa-graduation-cap"></i> Student Log in</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#studentSignUpModal"><span class="change-border__inner"><i class="fa fa-graduation-cap"></i>Student Sign Up</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#studentLogInModal"><span class="change-border__inner"><i class="fa fa-graduation-cap"></i>Student Log in</span></li>
 		     	<% end %>
 
 		     	<% if family_signed_in? %>
 			      <li class="nav-button change-border"><%= link_to 'Family Log out', destroy_family_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li class="nav-button change-border" data-toggle="modal" data-target="#familySignUpModal"><span class="change-border__inner"><i class="fa fa-users"></i> Host Sign up</span></li>
-			      <li class="nav-button change-border" data-toggle="modal" data-target="#familyLogInModal"class="button change-border"><span class="change-border__inner"><i class="fa fa-users"></i> Host Log in</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#familySignUpModal"><span class="change-border__inner"><i class="fa fa-users"></i>Host Sign up</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#familyLogInModal"class="button change-border"><span class="change-border__inner"><i class="fa fa-users"></i>Host Log in</span></li>
 		     	<% end %>
 		     	<% if student_signed_in? || family_signed_in? %>
-		     	 <li class="nav-button change-border"><i class="fa fa-cog"></i> Settings</li>
+		     	 <li class="nav-button change-border"><i class="fa fa-cog"></i>Settings</li>
 		     	<% end %>
 			   </ul>
 			 </div>

@@ -98,6 +98,7 @@ $light-gray-color: #acacac;
 		  color: #FFF;
 	  }
 	}
+
 	input.filestyle {
 		background-color: none;
 		border: none;
@@ -107,16 +108,17 @@ $light-gray-color: #acacac;
 }
 
 //=== family & student profile show page ==//
-#profile-container {
+.profile-container {
 	margin: 30px 0;
 	color: $brown-color;
-	background-color: #FFF;
 	border-radius: 20px;
 	// border: 2px solid $light-orange;
 
 	.profile-image {
 		border-bottom: 1.5px solid $gray-color;
-		margin: 20px 25%;
+		margin-top: 10px;
+		// margin: 20px 25%;
+		// background-color: #FFF;
 		// margin: 10px 0;
 		
 		.img-circle {
@@ -137,8 +139,8 @@ $light-gray-color: #acacac;
 	    p {
 		  font-weight: 300;
 		}
-		// background-color: #FFF;
 	}
+
 	span {
 		color: $dark-orange;
 		font-weight: 400;
@@ -146,10 +148,69 @@ $light-gray-color: #acacac;
 	}
 }
 
+// === Buttons ===//
+.profile-buttons {
+	padding-top: 10px;
 
+  .delete-btn {
+	  width: 60px;
+	  height: 30px;
+	  font-size: 12px;
+	  text-align: center;
+	  padding-top: 5px;
+	  background-color: $light-orange;
+	  border: 2px solid $off-white-color;
+	  border-radius: 10px;
+	  opacity: 0.9;
+	  margin: 0 7px;
+	  float: right;
+	    a {
+	      color: $off-white-color;
+	      text-decoration: none;
+	    }
+	    &:hover {	   	
+  	 	  background-color: $dark-orange;
+  	 	  border-color: #FFF; 	 	
+  	 	  opacity: 1;
+	    }
+	 
+	    &:hover a {
+	 	  color: #FFF;
+	 	  text-decoration: none;
+	    }
+	 
+	    &:focus {
+	 	  outline: none;
+	    }
+   }
 
+  .edit-btn {
+	  @extend .delete-btn;
+	  background-color: $off-white-color;
+	  border: 2px solid $light-orange;
+	  opacity: 0.9;
 
+	    a {
+	      color: $light-orange;
+	      text-decoration: none;
+	    }
 
+	   &:hover {
+	 	  background-color: #FFF;
+  	 	  border-color: $dark-orange;
+  	 	  opacity: 1;
+	   }
+
+  	   &:hover a {
+  	 	  color: $dark-orange;
+  	 	  text-decoration: none;
+	   }
+	 
+	   &:focus {
+	 	  outline: none;	
+	   }
+   }
+}
 
 
 

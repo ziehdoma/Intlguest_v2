@@ -1,21 +1,22 @@
-<div id="profile-container">
+<div class="profile-container">
   <div class="row">
-  	<div class="col-md-6 col-md-offset-3 profile-image">
+  	<div class="col-xs-10 col-xs-offset-1 col-s-8 col-s-offset-2 col-md-4 col-md-offset-4 col-lg-6 col-lg-offset-3 profile-image">
   	  <%= image_tag @familyprofile.image.url(:thumb), :class => 'img-circle' %>
-  	  <p class="profile-name"><span><%= @familyprofile.fname %>  <%= @familyprofile.lname %></span>'s Family</p>
-  	</div>
+  	  <p class="profile-name"><span><%= @familyprofile.fname %><%= @familyprofile.lname %></span>'s Family</p>
+  	</div><!--.profile-image-->
   </div><!--.row-->
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 profile-info">
-	  <p><i class="fa fa-smile-o"></i><span>About:</span> <%= @familyprofile.bio%> </p>
+    <div class="col-xs-10 col-xs-offset-1 col-s-8 col-s-offset-2 col-md-4 col-md-offset-4 col-lg-6 col-lg-offset-3 profile-info">
+	  <p><i class="fa fa-smile-o"></i><span>About:</span><%= @familyprofile.bio%> </p>
 	<!-- <p><span>Phone</span> <%= @familyprofile.phone %> </p> -->
-	  <p><i class="fa fa-map-marker"></i><span>Town:</span> <%= @familyprofile.town %></p>
+	  <p><i class="fa fa-map-marker"></i><span>Town:</span><%= @familyprofile.town %></p>
 	<!-- <p> Zipcode: <%= @familyprofile.zipcode %></p> -->
 	  <p><i class="fa fa-map-o"></i></i><span>State:</span> <%= @familyprofile.state %></p>
-    </div>
+    </div><!--.profile-info-->
   </div><!--.row-->
+
   <div class="row">
-     <div class="col-md-6 col-md-offset-3 profile-info">
+    <div class="col-xs-10 col-xs-offset-1 col-s-8 col-s-offset-2 col-md-4 col-md-offset-4 col-lg-6 col-lg-offset-3 profile-info">
 	   <p><i class="fa fa-paw"></i><span>Pets:</span>
 	     <%= @familyprofile.pets %> <%= @familyprofile.pet_desc %></p>
 	   <p><i class="fa fa-child"></i><span>Children:</span>
@@ -30,12 +31,21 @@
 	   	 <%= @familyprofile.room_type %></p>
 	   <p><i class="fa fa-cutlery"></i><span>Meals provided:</span>
 	   	 <%= @familyprofile.meals %></p>
-     </div>
+    </div><!--profile-buttons -->
+  </div><!--.row -->
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-s-8 col-s-offset-2 col-md-4 col-md-offset-4 col-lg-6 col-lg-offset-3 profile-buttons">
+      <div class="delete-btn">
+	    <%= link_to 'Delete', delete_path(@familyprofile), method: :delete, data:{ deletable: true} %>
+      </div>
+      <div class="edit-btn">
+  	    <%= link_to 'Edit', edit_path(@familyprofile) %>
+      </div>       
+    </div><!--profile-buttons -->
   </div><!--.row -->
 </div><!--#profile-container-->
   <!-- <div class="col-md-4 col-md-offset-2"> -->
-  	<%= link_to 'Edit', edit_path(@familyprofile) %>
-	<%= link_to 'Delete', delete_path(@familyprofile), method: :delete, data:{ deletable: true}, class: "delete-btttn" %>
   <!-- </div> -->
 
 
