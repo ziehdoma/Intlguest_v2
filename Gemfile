@@ -28,6 +28,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'mailboxer'
+
 
 
 # Use ActiveModel has_secure_password
