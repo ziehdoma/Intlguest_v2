@@ -29,8 +29,10 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
 
   devise_for :students
-  devise_for :families
-
+  devise_for :families, :controllers => { :omniauth_callbacks => "familyprofile/omniauth_callbacks" }
+  devise_scope :family do
+  delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_families_session
+end
   root 'studentprofiles#index'
   
   

@@ -5,5 +5,6 @@ class Student < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    has_one :studentprofile, dependent: :destroy
+   acts_as_messageable   
 
 end
