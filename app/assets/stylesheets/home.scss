@@ -25,9 +25,9 @@ $light-gray-color: #acacac;
 	p.welcome-msg-1 {
 		// width: 70%;
 		color: #FFF;
-		font-size: 50px;
+		font-size: 45px;
 		font-family: 'Ubuntu', sans-serif;
-		font-weight: 700;
+		font-weight: 500;
 		position: absolute;
 		top: 40%;
 		right: 120px;
@@ -50,7 +50,7 @@ $light-gray-color: #acacac;
  }
 
 	.student-sign-up-btn {
-		width: 275px;
+		width: 225px;
 		height: 35px;
 		position: absolute;
 		top: 67%;
@@ -64,8 +64,8 @@ $light-gray-color: #acacac;
 		transition-duration: 0.3s;
 		transition-timing-function: linear;
 		color: $white-color;
-		font-size: 20px;
-		font-weight: 700;
+		font-size: 18px;
+		font-weight: 500;
 		text-align: center;
 		padding: 3px;
 		
@@ -107,7 +107,8 @@ $light-gray-color: #acacac;
 	  padding: 10px 5px;
 	  color: $gray-color;
 	  border: none;
-	  background-color: transparent;
+	  // background-color: transparent;
+	  background-color: rgba(255,255,255, 0.5);
 	  float: left;
 	  border-width: 3px;
 	  border-style: solid;
@@ -117,7 +118,7 @@ $light-gray-color: #acacac;
 	}
 	  input:focus {
 	  	outline: none;
-	  	background-color: rgba(255,255,255, 0.3);
+	  	background-color: #FFF;
 	  	color: $brown-color;
 	  }
 
@@ -148,7 +149,6 @@ $light-gray-color: #acacac;
 #city-list {
 	// background-color: $white;
 	width: 70%;
-	height: 950px;
 	margin: 0 20% 50px 20%;
 
 	.grid {
@@ -173,7 +173,7 @@ $light-gray-color: #acacac;
 	figcaption {
 	  position: absolute;
 	  top: 0;
-	  left: 0;
+	  left: 5px;
 	  z-index: 2;
 	  width: 80%;
 	  height: 100%;
