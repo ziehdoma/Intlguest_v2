@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   devise_scope :family do
   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_families_session
 end
-  root 'studentprofiles#index'
+  root 'home#index'
   
   
 
