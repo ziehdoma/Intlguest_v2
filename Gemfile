@@ -32,9 +32,6 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'mailboxer'
 
-
-gem 'sass-rails', '~> 5.0'
-
 gem 'bootstrap'
 
 
