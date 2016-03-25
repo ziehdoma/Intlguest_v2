@@ -1,0 +1,298 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+/*--------------------------------------
+	Fonts and colors
+ ---------------------------------------*/
+@import 'fonts';
+$dark-orange: #ff8b6f;
+// $light-orange: #ffa36d;
+// $light-orange: #ffa583;
+$light-orange: #ff9b83;
+$back-color: #f0f0f0;
+$white-color: #f8f8f7;
+$off-white-color: #fcfcfc;
+$font-color: #564b47;
+$brown-color: #6d6262;
+$gray-color: #c4c4c4;
+$light-gray-color: #acacac;
+
+body{
+	// font-family: 'Lato', sans-serif;
+	// font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: $back-color;
+    margin: 0;
+
+}
+
+// ======== Header ====== //
+header {
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	background-color: $white-color;
+	z-index: 2;
+
+	
+nav {
+	width: 95%;
+	height: 45px;
+	margin: 0;
+	color: $font-color;
+	font-weight: 300;
+
+	.nav-logo {
+		width: 5%;
+		margin: 0;
+		float: left;
+	
+	img {
+		width: 45px;
+		height: 45px;
+		margin: 2.5px 15px;
+	  }
+ 	}
+  ul {
+  	 // width: 100px;
+  	 // height: 25px;
+  	 float: right;
+  	 // margin-left: 0;
+  	 // padding-top: 5px; // margin-top: 2.5px;
+    button.dropdown-toggle {
+    	width: 120px;
+    	font-size: 15px;
+    	letter-spacing: 2px;
+    	padding: 5px;
+    	background: transparent;
+    	color: $light-orange;
+    	border: none;
+    	// border: 2px solid $light-orange;
+    	border-radius: 7px;
+
+     &:hover {
+     	color: $dark-orange;
+     }
+    }
+  	  li {
+  		 list-style: none;
+  		 height: 25px;
+  		 margin: auto 10px;
+  		 color: $font-color;
+  		 text-decoration: none;
+  		 letter-spacing: 2px;
+  		 font-size: 12px;
+  		 cursor: pointer;
+
+  		 &:hover {
+  		 	color: $light-orange;
+  		 }
+  	  }
+    }
+  }
+}
+/*===== nav button border == */
+// li.nav-button {
+
+//   // border: 1px solid #eee;
+//   border: none;
+//   padding: 5px 20px;
+//   position: relative;
+
+// }
+
+// .change-border::after,
+// .change-border::before,
+// .change-border__inner::after,
+// .change-border__inner::before {
+//   background-color: $light-orange;
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   z-index: 10;
+//   transition: all .3s ease;
+//   -webkit-transition: all .3s ease;
+// }
+// /* setting upper-left*/
+// .change-border::after {
+//     height: 1px;
+//     left: -1px;
+//     top: -1px;
+//     width: 0px;
+// }
+// /* setting lower-right*/
+// .change-border::before {
+//   bottom: -1px;
+//   height: 1px;
+//   right: -1px;
+//   width: 0px;
+// }
+// /* setting lower-left */
+// .change-border__inner::after {
+//   bottom: -1px;
+//   height: 0px;
+//   left: -1px;
+//   width: 1px;
+// }
+// /* setting lower-right */
+// .change-border__inner::before {
+//   height: 0px;
+//   right: -1px;
+//   top: -1px;
+//   width: 1px;
+// }
+
+// /* hover */
+// .change-border:hover::after,
+// .change-border:hover::before {
+//   width: 100%;
+//   width: calc(100% + 1px);
+// }
+// .change-border:hover .change-border__inner::after,
+// .change-border:hover .change-border__inner::before {
+//   height: 100%;
+//   height: calc(100% + 1px);
+// }
+
+
+
+// ======== Login & Signup form ====== //
+.modal-content {
+	// font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	background-color: $white-color;
+	border-radius: 30px;
+	color: $brown-color;
+  
+  .modal-body {
+  	margin-bottom: 20px;
+  }
+
+  .modal-title {
+   	// color: $dark-orange;
+	}
+   button.close {
+   	outline: none;
+  }
+
+   form {
+      margin-top: 10px;
+      margin-bottom: 10px;
+	}
+   .email input:focus, .pw input:focus, .pwc input:focus {
+   	outline: 1px solid $light-orange;
+    }
+
+   .field {
+   	width: 40%;
+   	margin: 0 30%;
+
+   	label {
+     font-weight: 300;
+     }
+
+    #family_email, #student_email, #family_password, #student_password,#student_password_confirmation, #family_password_confirmation {
+     	width: 100%;
+     }
+  }
+  	.submit {
+  		@extend .field;
+  		margin-top: 10px;
+      input {
+      	float: right;
+      	// background-color: $light-orange;
+      	border: 2px solid $light-orange;
+      	background-color: #FFF;
+      	color: $light-orange;
+      	border-radius: 5px;
+      	font-weight: 300;
+      	transition-property: color font-weight background-color border;
+      	transition-duration: 0.3s;
+      	transition-timing-function: linear;
+
+      &:hover {
+      	background-color: $light-orange;
+      	border: 2px solid #FFF;
+      	color: $white-color;
+      	font-weight: 400;
+        }
+       &:focus {
+       	outline: none;
+       }
+      }
+  	}
+  	.forget-pw {
+  		color: $light-orange;
+
+  		&:hover {
+  			color: $dark-orange;
+  			text-decoration: none;
+  		}
+  	}
+}
+
+// ======== Footer ====== //
+
+footer {
+	width: 100%;
+	height: 250px;
+	margin: 0;
+	background-image: url("background2.png");
+	background-repeat: repeat;
+	color: #FFF;
+	font-weight: 500;
+	// background-size: cover;
+ .ft-container {
+
+ 	// background-color: red;
+
+	ul {
+		list-style: none;
+		margin: auto;
+
+	  li {
+		letter-spacing: 1px;
+		padding: 5px;
+	  }
+	}
+	.ft-left, .ft-middle, .ft-right {
+		margin-top: 20px;
+	} 
+
+	li.sns-icon {
+		font-size: 30px;
+		display: inline;
+		padding: 10px;
+		text-align: center;
+
+	  &:hover {
+	     -webkit-text-fill-color: #e9e9e9; /* Will override color (regardless of order) */
+		 -webkit-text-stroke-width: 1.5px;
+		 -webkit-text-stroke-color: $light-orange;
+	  }
+	}
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+// Place all the styles related to the studentprofiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+/*--------------------------------------
+	Fonts and colors
+ ---------------------------------------*/
+@import 'fonts';
+$dark-orange: #ff8b6f;
+// $light-orange: #ffa36d;
+// $light-orange: #ffa583;
+$light-orange: #ff9b83;
+$back-color: #f0f0f0;
+$white-color: #f8f8f7;
+$off-white-color: #fcfcfc;
+$font-color: #564b47;
+$brown-color: #6d6262;
+$gray-color: #c4c4c4;
+$light-gray-color: #acacac;
+
+//=== Family profile & student profile form ==/
+#profile-form-container {
+ 	margin: 20px auto;
+
+ 	p {
+ 		color: $dark-orange;
+ 		text-align: center;
+ 		letter-spacing: 1px;
+ 	}
+ }
+#new_familyprofile, #new_studentprofile {
+	color: $brown-color;
+
+	input {
+		width: 50%;
+		height: 25px;
+		margin:  5px 25%;
+		padding: 3px 10px;
+		border: none;
+		color: $brown-color;
+		background-color: #FFF;
+		border-radius: 5px;
+		// float: left;
+	}
+    input:focus {
+		outline: 2px solid $light-orange;
+		
+	}
+	.profile-select-box {
+		@extend input;
+		  margin: 9px 25%;
+		  padding: 0 10px;
+	// for caladner box  //
+		input {
+		  width: 80%;
+		  color: $light-gray-color;
+		  font-weight: 400;
+		  margin: 0;
+		  padding: 0;
+		  float: right;
+		  // border-radius: 10px;
+
+		  &:focus {
+		  	color: $brown-color;
+		  	outline: none;	
+		  }
+		}
+	// for caladner box label //
+		label.date-label {
+			width: 20%;
+			height: 25px;
+			margin: 0;
+			padding: 0;
+			float: left;
+		}
+
+	}
+	// for select box label //
+	label {
+		color: $light-gray-color;
+		font-weight: 400;
+		margin: 0;
+	}
+	// for Select box //
+	select {
+		background-color: #FFF;
+		border: none;
+		outline: none;
+		float: right;
+	}
+
+	.profile-submit-btn {
+		background-color: $light-orange;
+		color: $off-white-color;
+
+	  &:hover {
+		  background-color: $dark-orange;
+		  color: #FFF;
+	  }
+	}
+	input.filestyle {
+		background-color: none;
+		border: none;
+		outline: none;
+
+	}
+}
+
+//=== family & student profile show page ==//
+#profile-container {
+	margin: 30px 0;
+	color: $brown-color;
+	// border: 2px solid $light-orange;
+
+	.profile-image {
+		border-bottom: 1.5px solid $gray-color;
+		margin: 20px 25%;
+		// margin: 10px 0;
+		
+		.img-circle {
+			border: 2px solid #FFF;
+			margin: 10px;
+			display: inline-block;
+		}
+	    p.profile-name {
+	    	@extend .img-circle;
+	    	border: none;
+	    	font-size: 18px;
+	    	letter-spacing: 1px;
+	    }
+	}
+	.profile-info {
+	  @extend .profile-image;
+
+	    p {
+		  font-weight: 300;
+		}
+		// background-color: #FFF;
+	}
+	span {
+		color: $dark-orange;
+		font-weight: 400;
+		padding: 0 8px;
+	}
+}
+
+
+
+
+
+
+
+
+

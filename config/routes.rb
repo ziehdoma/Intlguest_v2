@@ -25,14 +25,16 @@ Rails.application.routes.draw do
   get '/familyprofilepage/:id/edit', to: 'familyprofiles#edit', as: 'editfamily'
   delete '/familyprofilepage/:id', to: 'familyprofiles#destroy', as: 'deletefamily', method: :delete
 
-  get '/home', to: 'home#index'
+  # get '/home', to: 'home#index'
   get '/about', to: 'home#about'
 
   devise_for :students
+
   devise_for :families, :controllers => { :omniauth_callbacks => "familyprofile/omniauth_callbacks" }
   devise_scope :family do
   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_families_session
 end
+
   root 'home#index'
   
   
