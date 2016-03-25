@@ -1,6 +1,9 @@
-<%= form_for @studentprofile, url: studentprofile_path, html: { multipart: true } do |f| %>
+<div class="row" id="profile-form-container">
+  <div class="col-md-6 col-md-offset-3 profile-form">
+  	<p>Tell us about you <i class="fa fa-smile-o"></i></p>
+	<%= form_for @studentprofile, url: studentprofile_path, html: { multipart: true } do |f| %>
 	
-	<%= f.text_field :fname, placeholder: "First Name" %></br>
+	<%= f.text_field :fname, placeholder: "First Name" %>
 
 	<%= f.text_field :lname, placeholder: "Last Name" %></br>
 
@@ -19,15 +22,20 @@
 	<%= f.text_field :allergies, placeholder: "Known Allergies" %></br>
 
 	<%= f.text_field :all_desc, placeholder: "Allergy Description" %></br>
-
+	<div class=" profile-select-box">
+	<label class="date-label">From</label>
 	<%= f.date_field :startduration, placeholder: "from" %> </br>
+	</div>
+	<div class="profile-select-box">
+	<label class="date-label">To</label>
+	<%= f.date_field :endduration, placeholder: "to" %>
+	</div></br>
+	<div class=" profile-select-box">
+	<%= f.file_field :image, placeholder: "Select your image", class:'filestyle' %>
+	</div></br>
 
-	<%= f.date_field :endduration, placeholder: "to" %> </br>
+	<%= f.submit :submit, :class=> 'profile-submit-btn'%>
 
-	<%= f.file_field :image, placeholder: "Select your image" %></br>
-
-
-	<%= f.submit :submit %>
-
-<% end %>
-	
+	<% end %>
+  </div>
+</div>

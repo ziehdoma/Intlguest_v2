@@ -1,19 +1,21 @@
-<div id="home-top">
+<div id="home-top" class="row">
+<div class="col-md-4 col-md-offset-8 welcome-msg-box">
   <p class="welcome-msg-1">Meet your</p>
-  <p class="welcome-msg-2">second Family<i class="fa fa-home fa-1x"></i></p>
-  <button class="student-sign-up-btn">
-  	<%= link_to 'Student Sign up', new_student_registration_path %>
-  </button>
-  <button class="family-sign-up-btn">
-  	<%= link_to 'Family Sign up', new_family_registration_path %></br>
-  	<%= link_to "Sign in with Facebook", family_omniauth_authorize_path(:facebook) %>
-  </button>
-  
+  <p class="welcome-msg-2">New Family<i class="fa fa-home fa-1x"></i></p>
+  <p type="button" class="student-sign-up-btn" data-toggle="modal" data-target="#studentSignUpModal">Student Sign up</p>
+  <p  type="button" class="family-sign-up-btn" data-toggle="modal" data-target="#familySignUpModal">Family Sign Up</p>
+ </div>
 </div>
-<div id="how-to-work">
-</div>
-<div id="city-list">
-	<p class="city-title">Find by cities</p>
+<div id="city-search" class="row">
+ <div class="col-md-6 col-md-offset-3">
+    <p class="city-title">Find by cities</p>
+ 	<form id="search-form">
+	  <input class="search-box" type="text" placeholder="Search..." required>
+	  <button class="search-btn"><i class="fa fa-search fa-lg"></i></button>
+	</form>
+  </div><!--.col-md-6-->
+ </div><!--#city-search-->
+ <div id="city-list" class="row">
 	  <div class="grid">
 	  <div class="grid-sizer"></div>
 	  <div class="grid-item">
@@ -36,7 +38,7 @@
 	  	<figure>
 	      <img src="../assets/la.png" />
 	        <figcaption>
-		      <p id="states">Los Angeles</p>
+		      <p id="states"><span>Los Angeles</span></p>
 	        </figcaption>
 	    </figure>
 	  </div>
@@ -44,7 +46,7 @@
 	    <figure>
 	      <img src="../assets/pa.png" />
 	        <figcaption>
-		      <p id="states">Pansylvania</p>
+		      <p id="states"><span>Pansylvania</span></p>
 	        </figcaption>
 	    </figure>
 	  </div>
@@ -79,7 +81,7 @@
 	    <figure>
 	  	  <img src="../assets/seattle.png" />
 	  	    <figcaption>
-		      <p id="states">Seattle</p>
+		      <p id="states"><span>Seattle</span></p>
 	        </figcaption>
 	    </figure>
 	  </div>
@@ -103,4 +105,5 @@
 	    <img src="../assets/fl.png" />
 	  </div> -->
 	</div>
+ </div><!--#city-list-->
 </div>

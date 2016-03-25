@@ -1,10 +1,13 @@
-
 @import 'fonts';
-$dark-orange: #ff7321;
-$light-orange: #ffa36d;
+$dark-orange: #ff8b6f;
+// $light-orange: #ffa36d;
+// $light-orange: #ffa583;
+$light-orange: #ff9b83;
 $back-color: #f0f0f0;
 $white-color: #f8f8f7;
+$off-white-color: #fcfcfc;
 $font-color: #564b47;
+<<<<<<< HEAD
 
 body{
 	font-family: 'Lato', sans-serif;
@@ -159,33 +162,39 @@ li.nav-button {
   height: 100%;
   height: calc(100% + 1px);
 }
+=======
+$brown-color: #6d6262;
+$gray-color: #c4c4c4;
+$light-gray-color: #acacac;
+>>>>>>> 69c2ba44c8c2be9640956501afe8af2ce9924c38
 
 /*=== home/index == */
 
 #home-top {
 	background-image: url("home.png");
 	background-size: cover;
-	// background-opacity: 0.7;
 	width: 100%;
 	height: 80vh;
 	margin:0;
 
-
+  .welcome-msg-box {
+  	height: 600px;
 	p.welcome-msg-1 {
-		color: $white-color;
+		// width: 70%;
+		color: #FFF;
 		font-size: 50px;
-		//font-family: 'Lato', sans-serif;
 		font-family: 'Ubuntu', sans-serif;
 		font-weight: 700;
 		position: absolute;
 		top: 40%;
-		right: 250px;
+		right: 120px;
 
 	}
 	p.welcome-msg-2 {
 		@extend .welcome-msg-1;
 		top: 50%;
-		right: 30px;
+		right: 10px;
+		// right: 30px;
 
 		.fa-home {
 			color: $light-orange;
@@ -195,8 +204,9 @@ li.nav-button {
 
 		}
 	}
+ }
 
-	button.student-sign-up-btn {
+	.student-sign-up-btn {
 		width: 275px;
 		height: 35px;
 		position: absolute;
@@ -207,44 +217,96 @@ li.nav-button {
 		font-family: 'Lato', sans-serif;
 		border: none;
 		border-radius: 10px;
-		transition-property: background-color;
+		transition-property: background-color color;
 		transition-duration: 0.3s;
 		transition-timing-function: linear;
-
-		a {
-			color: $white-color;
-			text-decoration: none;
-			font-size: 20px;
-			font-weight: 700;
-			// font-weight:
-		}
+		color: $white-color;
+		font-size: 20px;
+		font-weight: 700;
+		text-align: center;
+		padding: 3px;
+		
 		&:hover {
-			background-color: #ff833a;
+			background-color: $dark-orange;
+			color: #FFF;
+			border: none;
 		}
 	}
-	button.family-sign-up-btn {
+
+	.family-sign-up-btn {
 		@extend .student-sign-up-btn;
 		top: 75%;
 	}
 }
 
+#city-search {
+  p.city-title {
+	// width: 100%;
+	color: $brown-color;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: 2px;
+	margin: 0;
+	padding-top: 30px;
+  }
+	form {
+	  width: 80%;
+      height: 50px;
+      margin-top: 10px;
+	  margin-left: 10%;
+	  border-radius: 25px;
+      
+	input {
+	  width: 80%;
+      height: 50px;
+	  padding: 10px 5px;
+	  color: $gray-color;
+	  border: none;
+	  background-color: transparent;
+	  float: left;
+	  border-width: 3px;
+	  border-style: solid;
+	  border-color: $gray-color;
+	  border-right-color: transparent;
+	  border-radius: 25px 0 0 25px;
+	}
+	  input:focus {
+	  	outline: none;
+	  	background-color: rgba(255,255,255, 0.3);
+	  	color: $brown-color;
+	  }
+
+	  .search-btn {
+    	position: relative;
+    	float: right;
+    	border: 3px solid $light-orange;
+    	border-radius: 0 25px 25px 0;
+    	padding: 0;
+    	cursor: pointer;
+    	height: 50px;
+    	width: 20%;
+    	background-color: $light-orange;
+    	color: $white-color;
+    	transition-property: color background-color border-color;
+    	transition-duration: 0.2s;
+    	transition-timing-function: linear;
+
+	     &:hover {
+	       background-color: $dark-orange;
+	       border-color: $dark-orange;
+	       color: $white-color;
+	      }
+	    }
+     }
+}
+// ======== City list ====== //
 #city-list {
 	// background-color: $white;
-	width: 80%;
+	width: 70%;
 	height: 950px;
-	margin: 0 10%;
-
-	p.city-title {
-		width: 100%;
-		color: $font-color;
-		font-family: 'Ubuntu', sans-serif;
-		font-size: 35px;
-		font-weight: 400;
-		// font-style: italic;
-		text-align: center;
-		margin: 0;
-		padding-top: 50px;
-	}
+	margin: 0 20% 50px 20%;
 
 	.grid {
 		margin-top: 30px;
@@ -258,54 +320,52 @@ li.nav-button {
 	/* ---- .grid-item ---- */
 	.grid-sizer,
 	.grid-item {
-	  width: 33%;	
+	  width: 25%;	
 	}
 	figure {
 	  position: relative;
 	  overflow: hidden;
 	  width: auto;
 	}
-	  figcaption {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 2;
-		width: 80%;
-		height: 100%;
-		// background: rgba(255,255,255,.7);
-		-webkit-transition: .3s;
-		transition: .3s;
-		opacity: 0;
+	figcaption {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 2;
+	  width: 80%;
+	  height: 100%;
+	  -webkit-transition: .3s;
+	  transition: .3s;
+	  opacity: 0;
 
-		p {
-			color: $white-color;
-			position: relative;
-			top: 45%;
-			font-family: 'Ubuntu', sans-serif;
-			font-size: 2.5em;
-			font-weight: 700;
+      p {
+		color: $white-color;
+		position: relative;
+		top: 45%;
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
 		
+	    span {
+		  color: $light-orange;
+			}
 		}
 	 }
 	 figure:hover figcaption {
 	 	opacity: 1;
+	 	cursor: pointer;
 
 	 }
   
 	.grid-item {
 	  float: left;
-	  // border: 5px solid #f8f8f7;
-	  // border-radius: 10px;
-	  // margin: 5px;
+	  margin: 10px;
 	}
 
 	.grid-item img {
 	  display: block;
 	  max-width: 100%;
-	  // border: 5px solid #f8f8f7;
 	  border-radius: 10px;
 	}
-
-
 }
 

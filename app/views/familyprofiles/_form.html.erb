@@ -1,41 +1,57 @@
-<%= form_for @familyprofile, url: familyprofile_path, html: { multipart: true } do |f| %>
+<div class="row" id="profile-form-container">
+  <div class="col-md-6 col-md-offset-3 profile-form">
+	<p>Tell us about your family <i class="fa fa-smile-o"></i></p>
+	<%= form_for @familyprofile, url: familyprofile_path, html: { multipart: true } do |f| %>
 	
-	<%= f.text_field :fname, placeholder: "First Name" %></br>
+	<%= f.text_field :fname, placeholder: "First Name" %>
 
-	<%= f.text_field :lname, placeholder: "Last Name" %></br>
+	<%= f.text_field :lname, placeholder: "Last Name" %>
 
-	<%= f.text_field :bio, placeholder: "About your family" %></br>
+	<%= f.text_field :bio, placeholder: "About your family" %>
 
 	<%= f.text_field :town, placeholder: "City"%></br>
 
-	<%= f.text_field :zipcode, placeholder: "Zipcode"%></br>
+	<%= f.text_field :zipcode, placeholder: "Zipcode"%>
 
-	<%= f.text_field :state, placeholder: "State" %></br>
-	<%= f.text_field :pets, placeholder: "Pets" %></br>
+	<%= f.text_field :state, placeholder: "State" %>
+	<%= f.text_field :pets, placeholder: "Pets" %>
 
-	<%= f.text_field :pet_desc, placeholder: "Dogs/Cats" %></br>
+	<%= f.text_field :pet_desc, placeholder: "Dogs/Cats" %>
 
-	<%= f.text_field :children, placeholder: "Children" %></br>
-	<%= f.text_field :phone, placeholder: "Phone" %></br>
-	<%= f.text_field :duration_value, placeholder: "No of days hosting" %></br>
+	<%= f.text_field :children, placeholder: "Children" %>
+	<%= f.text_field :phone, placeholder: "Phone" %>
+	<%= f.text_field :duration_value, placeholder: "No of days hosting" %>
+	<div class=" profile-select-box">
 	<%= f.label :smoker %>
-	<%= f.select :smokers, ['Yes','No'] %></br>
+	<%= f.select :smokers, ['Yes','No'] %>
+	</div>
+	<div class=" profile-select-box">
 	<%= f.label :Smoking_Allowed %>
-	<%= f.select :smoking_allowed, ['Yes','No'] %></br>
-
+	<%= f.select :smoking_allowed, ['Yes','No'] %>
+	</div>
+	<div class=" profile-select-box">
 	<%= f.label :room %>
-	<%= f.select :room_type, ['Shared', 'Private'] %></br>
-	
-    <%= f.select :duration, ['Days','Weeks'] %></br>
-
+	<%= f.select :room_type, ['Shared', 'Private'] %>
+	</div>
+	<div class=" profile-select-box">
+	<%= f.label :duration %>
+    <%= f.select :duration, ['Days','Weeks'] %>
+	</div>
+	<div class=" profile-select-box">
     <%= f.label :Meals_provided %>
-	<%= f.select :meals, ['Yes', 'No'] %></br>
+	<%= f.select :meals, ['Yes', 'No'] %>
+	</div>
+	<!-- <div class=" profile-select-box"> -->
+	  <!-- <div class="file-input-container"> -->
 
-	<%= f.file_field :image, placeholder: "Select your image" %></br>
+	<%= f.file_field :image, class:'filestyle' %>
+	  <!-- </div> -->
+	<!-- </div> -->
+	</br>
 
-	<%= f.submit :submit %>
+	<%= f.submit :submit, :class=> 'profile-submit-btn' %>
 
-	
-
-<% end %>
+	<% end %>
+  </div>
+</div>
 	

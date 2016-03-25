@@ -2,17 +2,23 @@
 <html>
 	<head>
 	  <title>Intlguest</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	  <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 	 <!--  // <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.js"></script> -->
+
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	  <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+	  
 	</head>
 	<body>
 	  <header>
 	  	<nav>
 	  		<!-- <p id="nav-logo"> -->
-	  			<%= link_to image_tag("/assets/icon.png"), root_path, :class =>"nav-logo" %>
+	  			<%= link_to image_tag("/assets/newColorLogo2.png"), root_path, :class =>"nav-logo" %>
 	  		<!-- </p> -->
 		  	<ul>
 		      <% if flash[:notice] %>
@@ -21,37 +27,140 @@
 		      <% if flash[:alert] %>
 		        <li class="alert"><%= alert %></li>
 		      <% end %>
-		      
-		      <li class="nav-button change-border"><%= link_to 'About', about_path, :class => "change-border__inner" %></li>
-
-			    <% if student_signed_in? %>
-			      <li class="nav-button change-border"><%= link_to 'Student Log out', destroy_student_session_path,  method: :delete, :class => "change-border__inner" %></li>
+		            
+  			  <div class="dropdown">
+			    <button class="dropdown-toggle" type="button" data-toggle="dropdown">Menu <i class="fa fa-chevron-down"></i>
+			    <!-- <span class="caret"></span> -->
+			    </button>
+			      <ul class="dropdown-menu">
+			        <li class="nav-button change-border"><%= link_to 'About', about_path, :class => "change-border__inner" %></li>
+			        <% if student_signed_in? %>
+			      <li class="nav-button change-border" ><%= link_to 'Student Log out', destroy_student_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li class="nav-button change-border"><%= link_to 'Student Sign up', new_student_registration_path, :class => "change-border__inner" %></li>
-			      <li class="nav-button change-border"><%= link_to 'Student Login', student_session_path, :class => "change-border__inner" %></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#studentSignUpModal"><span class="change-border__inner"><i class="fa fa-graduation-cap"></i> Student Sign Up</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#studentLogInModal"><span class="change-border__inner"><i class="fa fa-graduation-cap"></i> Student Log in</span></li>
 		     	<% end %>
 
 		     	<% if family_signed_in? %>
 			      <li class="nav-button change-border"><%= link_to 'Family Log out', destroy_family_session_path,  method: :delete, :class => "change-border__inner" %></li>
 			     <% else %>
-			      <li class="nav-button change-border"><%= link_to 'Family Sign up', new_family_registration_path, :class => "change-border__inner" %></li>
-			      <li class="nav-button change-border"class="button change-border"><%= link_to 'Family Login', family_session_path, :class => "change-border__inner" %></li>
-		     	
-		     	<% end %>
-		     	
-			   	<li class="search-box"><%= form_tag(famindex_path, :method => "get",  id: "search-form") do %>
-                        <%= text_field_tag :search, params[:search], placeholder: "family by city" %>
-                    <% end %> </li>
 
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#familySignUpModal"><span class="change-border__inner"><i class="fa fa-users"></i> Host Sign up</span></li>
+			      <li class="nav-button change-border" data-toggle="modal" data-target="#familyLogInModal"class="button change-border"><span class="change-border__inner"><i class="fa fa-users"></i> Host Log in</span></li>
+		     	<% end %>
+		     	<% if student_signed_in? || family_signed_in? %>
+		     	 <li class="nav-button change-border"><i class="fa fa-cog"></i> Settings</li>
+		     	<% end %>
+			   </ul>
+			 </div>
 		    </ul>
-		   
 	   	</nav>
 
   	</header>
-  
 
+
+	<!-- MODAL -->
+	 <div class="modal fade" id="studentSignUpModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Student Sign Up</h4>
+	        </div>
+	        <div class="modal-body">
+	         <p><%= render 'students/registrations/new' %></p>
+	        </div>
+	   <!--      <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
+
+	  <div class="modal fade" id="studentLogInModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Student Log In</h4>
+	        </div>
+	        <div class="modal-body">
+	         <%= render 'students/sessions/new' %>
+	        </div>
+	    <!--     <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
+
+	  <div class="modal fade" id="familySignUpModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title"> Host Family Sign up</h4>
+	        </div>
+	        <div class="modal-body">
+	         <%= render 'families/registrations/new' %>
+	        </div>
+	    <!--     <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
+
+	  <div class="modal fade" id="familyLogInModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Host Family Login</h4>
+	        </div>
+	        <div class="modal-body">
+	         <%= render 'families/sessions/new' %>
+	        </div>
+	     <!--    <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div> -->
+	      </div>
+	      
+	    </div>
+	  </div>
 
 	<%= yield %>
 
-	</body>
+     <footer>
+       <div class="ft-container row">
+         <div class="col-sm-4 col-md-4 ft-left">
+  		   <ul>
+  		   	<li>About</li>
+  		   	<li>Team</li>
+  		   	<li>Policy & Term</li>
+  		   	<li>Payment method</li>
+  		   	<li>Contact</li>
+  		   </ul>
+         </div>
+         <div class="col-sm-4 col-md-4 ft-middle">
+  		  <!--  <p>HELLO I am Middle</p> -->
+         </div>
+         <div class="col-sm-4 col-md-4 ft-right">
+  		   <ul>
+  		   	<li class="sns-icon"><i class="fa fa-facebook"></i></li>
+  		   	<li class="sns-icon"><i class="fa fa-twitter"></i></li>
+  		   	<li class="sns-icon"><i class="fa fa-instagram"></i></li>
+  		   </ul>
+         </div>
+       </div>
+
+     </footer>
+  </body>
 </html>
