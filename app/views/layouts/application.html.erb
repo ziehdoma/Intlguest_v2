@@ -21,14 +21,7 @@
 	  		<!-- <p id="nav-logo"> -->
 	  			<%= link_to image_tag("/assets/newColorLogo2.png"), root_path, :class =>"nav-logo" %>
 	  		<!-- </p> -->
-		  	<ul>
-		      <% if flash[:notice] %>
-		        <li class="notice"><%= notice %></li>
-		      <% end %>
-		      <% if flash[:alert] %>
-		        <li class="alert"><%= alert %></li>
-		      <% end %>
-		            
+		  	<ul>    
   			  <div class="dropdown">
 			    <button class="dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bars fa-2x"></i>
 			    <!-- <span class="caret"></span> -->
@@ -87,7 +80,7 @@
 	          <h4 class="modal-title">Student Log In</h4>
 	        </div>
 	        <div class="modal-body">
-	         <%= render template: 'students/sessions/new' %>
+	         <%= render 'students/sessions/new' %>
 	        </div>
 	    <!--     <div class="modal-footer">
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -141,21 +134,22 @@
        <div class="ft-container row">
          <div class="col-sm-4 col-md-4 ft-left">
   		   <ul>
-  		   	<li>About</li>
-  		   	<li>Team</li>
-  		   	<li>Policy & Term</li>
-  		   	<li>Payment method</li>
-  		   	<li>Contact</li>
+  		   	<li class="footer-nav">About</li>
+  		   	<li class="footer-nav">Team</li>
+  		   	<li class="footer-nav">Policy & Term</li>
+  		   	<li class="footer-nav">Payment method</li>
+  		   	<li class="footer-nav"><a href="mailto:hello@hellofamily.co">Contact us</a> 
+</li>
   		   </ul>
          </div>
          <div class="col-sm-4 col-md-4 ft-middle">
   		  <!--  <p>HELLO I am Middle</p> -->
          </div>
-         <div class="col-sm-4 col-md-4 ft-right">
+         <div class="col-sm-4 col-md-4 ft-right ft">
   		   <ul>
-  		   	<li class="sns-icon"><i class="fa fa-facebook"></i></li>
-  		   	<li class="sns-icon"><i class="fa fa-twitter"></i></li>
-  		   	<li class="sns-icon"><i class="fa fa-instagram"></i></li>
+  		   	<li class="sns-icon"><a href="facebook.com"><i class="fa fa-facebook"></i></a></li>
+  		   	<li class="sns-icon"><a href="twitter.com"><i class="fa fa-twitter"></i></a></li>
+  		   	<li class="sns-icon"><a href="instagram.com"><i class="fa fa-instagram"></i></a></li>
   		   </ul>
          </div>
        </div>

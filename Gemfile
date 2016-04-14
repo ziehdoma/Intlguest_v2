@@ -30,8 +30,6 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 gem 'devise'
 
-gem 'sass-rails', '~> 5.0'
-
 gem 'bootstrap'
 
 

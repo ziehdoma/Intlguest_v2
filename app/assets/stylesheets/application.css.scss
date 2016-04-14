@@ -15,29 +15,23 @@
  */
 
 @import "bootstrap";
-/*--------------------------------------
-	Fonts and colors
- ---------------------------------------*/
-@import 'fonts';
-$dark-orange: #ff8b6f;
-// $light-orange: #ffa36d;
-// $light-orange: #ffa583;
-$light-orange: #ff9b83;
-$back-color: #f0f0f0;
-$white-color: #f8f8f7;
-$off-white-color: #fcfcfc;
-$font-color: #564b47;
-$brown-color: #6d6262;
-$gray-color: #c4c4c4;
-$light-gray-color: #acacac;
+@import 'fonts_color';
 
-body{
-	// font-family: 'Lato', sans-serif;
+body {
+	  font-family: 'Lato', sans-serif;
 	// font-family: 'Alegreya Sans', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
+    // font-family: 'Ubuntu', sans-serif;
     background-color: $back-color;
     margin: 0;
 
+}
+.notice, .alert {
+    float: left;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 // ======== Header ====== //
@@ -250,7 +244,7 @@ nav {
 
 footer {
 	width: 100%;
-	height: 250px;
+	height: 225px;
 	margin: 0;
 	background-image: url("background2.png");
 	background-repeat: repeat;
@@ -262,36 +256,40 @@ footer {
 	// background-size: cover;
  .ft-container {
 
- 	// background-color: red;
+  .ft-left, .ft-middle, .ft-right {
+    margin-top: 20px;
+  }
 
 	ul {
 		list-style: none;
 		margin: auto;
 
-	  li {
+	 li.footer-nav {
 		letter-spacing: 1px;
 		padding: 5px;
-	  }
-	}
-	.ft-left, .ft-middle, .ft-right {
-		margin-top: 20px;
+    font-size: 1.25em;
 	} 
 
 	li.sns-icon {
-		font-size: 30px;
+		font-size: 2em;
 		display: inline;
 		padding: 10px;
 		text-align: center;
-
-	  &:hover {
-	     -webkit-text-fill-color: #e9e9e9; /* Will override color (regardless of order) */
-		 -webkit-text-stroke-width: 1.5px;
-		 -webkit-text-stroke-color: $light-orange;
-	  }
-	}
   }
 }
-
+   a {
+    color: #FFF;     
+     
+     &:hover {
+     // -webkit-text-fill-color: #e9e9e9; /* Will override color (regardless of order) */
+     // -webkit-text-stroke-width: 1.5px;
+     // -webkit-text-stroke-color: $light-orange;
+     text-decoration: none;
+     color: $dark-orange;
+    }
+   }
+  }
+}//footer end
 // ==== Forgot Password? page === //
 
 

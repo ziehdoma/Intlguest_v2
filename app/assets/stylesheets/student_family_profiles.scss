@@ -2,21 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
-/*--------------------------------------
-	Fonts and colors
- ---------------------------------------*/
-@import 'fonts';
-$dark-orange: #ff8b6f;
-// $light-orange: #ffa36d;
-// $light-orange: #ffa583;
-$light-orange: #ff9b83;
-$back-color: #f0f0f0;
-$white-color: #f8f8f7;
-$off-white-color: #fcfcfc;
-$font-color: #564b47;
-$brown-color: #6d6262;
-$gray-color: #c4c4c4;
-$light-gray-color: #acacac;
+@import 'fonts_color';
 
 //=== Family profile & student profile form ==/
 #profile-form-container {
