@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= rweuire bootstrap-sprockets
 //= require_tree .
 
 

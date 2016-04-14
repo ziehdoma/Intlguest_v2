@@ -43,8 +43,8 @@
     </div><!--profile-buttons -->
   </div><!--.row -->
 </div><!--#profile-container-->
-
 <%= link_to 'Edit', edit_path(@studentprofile) %>
 <%= link_to 'Delete', delete_path(@studentprofile), method: :delete, data:{ deletable: true}, class: "delete-btttn" %>
 
 
+<%= render 'reviews/form' %>

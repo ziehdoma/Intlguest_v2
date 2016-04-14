@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  get '/stuindex', to: 'studentprofiles#index'
+
  
   get 'reviews/index'
 
@@ -15,6 +18,7 @@ Rails.application.routes.draw do
   get '/studentprofilepage/:id/edit', to: 'studentprofiles#edit', as: 'edit'
   delete '/studentprofilepage/:id', to: 'studentprofiles#destroy', as: 'delete', method: :delete
 
+  get '/famindex', to: 'familyprofiles#index'
   get '/familyprofile', to: 'familyprofiles#new'
   post '/familyprofile', to: 'familyprofiles#create'
   get '/familyprofilepage/:id', to: 'familyprofiles#show', as: 'familyprofilepage'
@@ -25,9 +29,12 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
 
   devise_for :students
-  devise_for :families
 
-  # root 'studentprofiles#index'
+  devise_for :families, :controllers => { :omniauth_callbacks => "familyprofile/omniauth_callbacks" }
+  devise_scope :family do
+  delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_families_session
+end
+
   root 'home#index'
   
   
